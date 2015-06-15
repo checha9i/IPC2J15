@@ -86,6 +86,13 @@ namespace Whizz_Hard_Books_201313819.servicioweb {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.Whizz_Hard_Books.com/disponibles", ReplyAction="*")]
         System.Threading.Tasks.Task<int> disponiblesAsync(string libro);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.Whizz_Hard_Books.com/top", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int top(string libro);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.Whizz_Hard_Books.com/top", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> topAsync(string libro);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.Whizz_Hard_Books.com/prestamos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int prestamos(string libro);
@@ -116,10 +123,10 @@ namespace Whizz_Hard_Books_201313819.servicioweb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.Whizz_Hard_Books.com/Update_Prestamo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        bool Update_Prestamo(string tabla, int prestamo, string libro, int disponibles);
+        bool Update_Prestamo(string tabla, int prestamo, string libro, int disponibles, int top);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.Whizz_Hard_Books.com/Update_Prestamo", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> Update_PrestamoAsync(string tabla, int prestamo, string libro, int disponibles);
+        System.Threading.Tasks.Task<bool> Update_PrestamoAsync(string tabla, int prestamo, string libro, int disponibles, int top);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.Whizz_Hard_Books.com/Update_Reserva", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -271,6 +278,14 @@ namespace Whizz_Hard_Books_201313819.servicioweb {
             return base.Channel.disponiblesAsync(libro);
         }
         
+        public int top(string libro) {
+            return base.Channel.top(libro);
+        }
+        
+        public System.Threading.Tasks.Task<int> topAsync(string libro) {
+            return base.Channel.topAsync(libro);
+        }
+        
         public int prestamos(string libro) {
             return base.Channel.prestamos(libro);
         }
@@ -303,12 +318,12 @@ namespace Whizz_Hard_Books_201313819.servicioweb {
             return base.Channel.fechahoyAsync();
         }
         
-        public bool Update_Prestamo(string tabla, int prestamo, string libro, int disponibles) {
-            return base.Channel.Update_Prestamo(tabla, prestamo, libro, disponibles);
+        public bool Update_Prestamo(string tabla, int prestamo, string libro, int disponibles, int top) {
+            return base.Channel.Update_Prestamo(tabla, prestamo, libro, disponibles, top);
         }
         
-        public System.Threading.Tasks.Task<bool> Update_PrestamoAsync(string tabla, int prestamo, string libro, int disponibles) {
-            return base.Channel.Update_PrestamoAsync(tabla, prestamo, libro, disponibles);
+        public System.Threading.Tasks.Task<bool> Update_PrestamoAsync(string tabla, int prestamo, string libro, int disponibles, int top) {
+            return base.Channel.Update_PrestamoAsync(tabla, prestamo, libro, disponibles, top);
         }
         
         public bool Update_Reserva(string tabla, int reservas, string libro) {

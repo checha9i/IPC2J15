@@ -45,12 +45,12 @@ namespace Whizz_Hard_Books_201313819
             
 
             String Tabla = "Libro";
-            String Campos = "ID_Libro, Nombre, Autor, Existencia, Paginas, Tema, Co_Autor, Disponibles, Prestados, Reservados";
+            String Campos = "ID_Libro, Nombre, Autor, Existencia, Paginas, Tema, Co_Autor, Disponibles, Prestados, Reservados,topprestados";
             String existenci, Disponibles;
             existenci = existencias.Text;
             Disponibles = existenci;
             int ID = servicio.cantidad()+1;
-            String Valores = "'" + ID + "','" + nombre.Text + "','" + Autor.Text + "','" + existenci + "','" + Paginas.Text + "','" + Tema.Text + "','" + Co_Autor.Text + "','" + Disponibles +"','" + 0 + "','" + 0 + "'";
+            String Valores = "'" + ID + "','" + nombre.Text + "','" + Autor.Text + "','" + existenci + "','" + Paginas.Text + "','" + Tema.Text + "','" + Co_Autor.Text + "','" + Disponibles +"','" + 0 + "','" + 0 + "','"+0+"'";
 
             if (servicio.Registrar(Tabla, Campos, Valores))
             {

@@ -29,6 +29,7 @@ namespace Whizz_Hard_Books_201313819
                 string fecha = MyService.fechahoy().ToString();
                 //update tablas
                 int nprestados = MyService.nprestados_cliente(carn) + 1;
+                int ntop = MyService.top(libro) + 1;
                 int disponibles = MyService.disponibles(libro) - 1;
                 int prestados = MyService.prestamos(libro) + 1;
                 string tablacliente = "Clientes";
@@ -51,7 +52,7 @@ namespace Whizz_Hard_Books_201313819
                 {
 
 
-                    if (MyService.Update_Prestamo(TablaLibro, prestados, libro, disponibles))
+                    if (MyService.Update_Prestamo(TablaLibro, prestados, libro, disponibles,ntop))
                     {
 
                         if (MyService.Update_clientes(tablacliente, nprestados, carn))

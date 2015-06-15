@@ -46,7 +46,7 @@ namespace Whizz_Hard_Books_201313819
             else if (comboBox1.SelectedItem.Equals("Mas Prestados"))
             {
                 dataGridView1.DataSource = MyService.busqueda_masvendidos();
-                dataGridView1.DataMember = "Prestamos";
+                dataGridView1.DataMember = "Libro";
             }         
             
             

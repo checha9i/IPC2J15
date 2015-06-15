@@ -145,6 +145,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="top">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="libro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="topResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="topResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="prestamos">
         <s:complexType>
           <s:sequence>
@@ -204,6 +218,7 @@
             <s:element minOccurs="1" maxOccurs="1" name="prestamo" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="libro" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="disponibles" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="top" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -365,6 +380,12 @@
   <wsdl:message name="disponiblesSoapOut">
     <wsdl:part name="parameters" element="tns:disponiblesResponse" />
   </wsdl:message>
+  <wsdl:message name="topSoapIn">
+    <wsdl:part name="parameters" element="tns:top" />
+  </wsdl:message>
+  <wsdl:message name="topSoapOut">
+    <wsdl:part name="parameters" element="tns:topResponse" />
+  </wsdl:message>
   <wsdl:message name="prestamosSoapIn">
     <wsdl:part name="parameters" element="tns:prestamos" />
   </wsdl:message>
@@ -471,6 +492,10 @@
     <wsdl:operation name="disponibles">
       <wsdl:input message="tns:disponiblesSoapIn" />
       <wsdl:output message="tns:disponiblesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="top">
+      <wsdl:input message="tns:topSoapIn" />
+      <wsdl:output message="tns:topSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="prestamos">
       <wsdl:input message="tns:prestamosSoapIn" />
@@ -602,6 +627,15 @@
     </wsdl:operation>
     <wsdl:operation name="disponibles">
       <soap:operation soapAction="http://www.Whizz_Hard_Books.com/disponibles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="top">
+      <soap:operation soapAction="http://www.Whizz_Hard_Books.com/top" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -794,6 +828,15 @@
     </wsdl:operation>
     <wsdl:operation name="disponibles">
       <soap12:operation soapAction="http://www.Whizz_Hard_Books.com/disponibles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="top">
+      <soap12:operation soapAction="http://www.Whizz_Hard_Books.com/top" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
