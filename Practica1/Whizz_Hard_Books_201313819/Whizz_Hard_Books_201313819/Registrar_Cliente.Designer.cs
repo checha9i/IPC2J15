@@ -204,7 +204,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "Registrar_Cliente";
-            this.Text = "Registrar_Cliente";
+            this.Text = "ññk  ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -47,8 +47,12 @@ namespace Whizz_Hard_Books_201313819
             {
                 dataGridView1.DataSource = MyService.busqueda_masvendidos();
                 dataGridView1.DataMember = "Libro";
-            }         
-            
+            }
+            else if (comboBox1.SelectedItem.Equals("Libros Reservados"))
+            {
+                dataGridView1.DataSource = MyService.reservados_consulta(textBox1.Text);
+                dataGridView1.DataMember = "Libro";
+            }                
             
             
 

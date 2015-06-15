@@ -45,7 +45,7 @@ namespace Whizz_Hard_Books_201313819
                     MessageBox.Show("Cliente ya tiene 5 libros prestados");
 
                 }
-                else if (MyService.disponibles(ID.Text) == 0)
+                else if (MyService.disponibles(ID.Text) ==0)
                 {
                     MessageBox.Show("Libro no disponible en existencias");
                 }else if (MyService.Registrar(TablaPrestamo, Campos, valores))

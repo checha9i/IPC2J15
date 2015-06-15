@@ -53,8 +53,8 @@ namespace Whizz_Hard_Books_201313819
 
             if (servicio.Registrar(Tabla, Campos, Valores))
             {
-
-                MessageBox.Show("Cliente creado");
+                
+                MessageBox.Show("Cliente creado, carnet numero:"+ID);
             }
             else
             {

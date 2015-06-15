@@ -69,6 +69,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="reservados_consulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDMask" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reservados_consultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reservados_consultaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="busqueda_autor">
         <s:complexType>
           <s:sequence>
@@ -350,6 +371,12 @@
   <wsdl:message name="busqueda_nombreSoapOut">
     <wsdl:part name="parameters" element="tns:busqueda_nombreResponse" />
   </wsdl:message>
+  <wsdl:message name="reservados_consultaSoapIn">
+    <wsdl:part name="parameters" element="tns:reservados_consulta" />
+  </wsdl:message>
+  <wsdl:message name="reservados_consultaSoapOut">
+    <wsdl:part name="parameters" element="tns:reservados_consultaResponse" />
+  </wsdl:message>
   <wsdl:message name="busqueda_autorSoapIn">
     <wsdl:part name="parameters" element="tns:busqueda_autor" />
   </wsdl:message>
@@ -473,6 +500,10 @@
       <wsdl:input message="tns:busqueda_nombreSoapIn" />
       <wsdl:output message="tns:busqueda_nombreSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="reservados_consulta">
+      <wsdl:input message="tns:reservados_consultaSoapIn" />
+      <wsdl:output message="tns:reservados_consultaSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="busqueda_autor">
       <wsdl:input message="tns:busqueda_autorSoapIn" />
       <wsdl:output message="tns:busqueda_autorSoapOut" />
@@ -582,6 +613,15 @@
     </wsdl:operation>
     <wsdl:operation name="busqueda_nombre">
       <soap:operation soapAction="http://www.Whizz_Hard_Books.com/busqueda_nombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reservados_consulta">
+      <soap:operation soapAction="http://www.Whizz_Hard_Books.com/reservados_consulta" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -783,6 +823,15 @@
     </wsdl:operation>
     <wsdl:operation name="busqueda_nombre">
       <soap12:operation soapAction="http://www.Whizz_Hard_Books.com/busqueda_nombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reservados_consulta">
+      <soap12:operation soapAction="http://www.Whizz_Hard_Books.com/reservados_consulta" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

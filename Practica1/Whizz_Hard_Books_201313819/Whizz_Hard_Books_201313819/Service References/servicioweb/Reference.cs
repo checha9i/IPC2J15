@@ -51,6 +51,13 @@ namespace Whizz_Hard_Books_201313819.servicioweb {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.Whizz_Hard_Books.com/busqueda_nombre", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> busqueda_nombreAsync(string IDMask);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.Whizz_Hard_Books.com/reservados_consulta", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet reservados_consulta(string IDMask);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.Whizz_Hard_Books.com/reservados_consulta", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> reservados_consultaAsync(string IDMask);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.Whizz_Hard_Books.com/busqueda_autor", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet busqueda_autor(string IDMask);
@@ -236,6 +243,14 @@ namespace Whizz_Hard_Books_201313819.servicioweb {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> busqueda_nombreAsync(string IDMask) {
             return base.Channel.busqueda_nombreAsync(IDMask);
+        }
+        
+        public System.Data.DataSet reservados_consulta(string IDMask) {
+            return base.Channel.reservados_consulta(IDMask);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> reservados_consultaAsync(string IDMask) {
+            return base.Channel.reservados_consultaAsync(IDMask);
         }
         
         public System.Data.DataSet busqueda_autor(string IDMask) {

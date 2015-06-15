@@ -73,7 +73,8 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Autor",
             "Nombre de Libro",
-            "Mas Prestados"});
+            "Mas Prestados",
+            "Libros Reservados"});
             this.comboBox1.Location = new System.Drawing.Point(120, 56);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(133, 21);
