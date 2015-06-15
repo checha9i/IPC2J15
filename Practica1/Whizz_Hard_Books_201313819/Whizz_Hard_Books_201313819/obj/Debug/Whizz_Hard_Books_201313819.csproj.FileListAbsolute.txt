@@ -1,0 +1,14 @@
+c:\users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\bin\Debug\Whizz_Hard_Books_201313819.exe.config
+c:\users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\bin\Debug\Whizz_Hard_Books_201313819.exe
+c:\users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\bin\Debug\Whizz_Hard_Books_201313819.pdb
+c:\users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\obj\Debug\Whizz_Hard_Books_201313819.csprojResolveAssemblyReference.cache
+c:\users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\obj\Debug\Whizz_Hard_Books_201313819.Form1.resources
+c:\users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\obj\Debug\Whizz_Hard_Books_201313819.Properties.Resources.resources
+c:\users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\obj\Debug\Whizz_Hard_Books_201313819.csproj.GenerateResource.Cache
+c:\users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\obj\Debug\Whizz_Hard_Books_201313819.exe
+c:\users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\obj\Debug\Whizz_Hard_Books_201313819.pdb
+c:\users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\obj\Debug\Whizz_Hard_Books_201313819.RegistrarLibros.resources
+C:\Users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\obj\Debug\Whizz_Hard_Books_201313819.Consultar.resources
+C:\Users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\obj\Debug\Whizz_Hard_Books_201313819.Prestar.resources
+C:\Users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\obj\Debug\Whizz_Hard_Books_201313819.Registrar_Cliente.resources
+C:\Users\javier\documents\visual studio 2013\Projects\Whizz_Hard_Books_201313819\Whizz_Hard_Books_201313819\obj\Debug\Whizz_Hard_Books_201313819.Devoluciones.resources
