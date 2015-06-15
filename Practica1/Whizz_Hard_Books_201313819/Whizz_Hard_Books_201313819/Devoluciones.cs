@@ -33,16 +33,16 @@ namespace Whizz_Hard_Books_201313819
         {
             servicioweb.ServiceSoapClient MyService = new servicioweb.ServiceSoapClient();
             int prestamo = MyService.select_prestamo(textBox2.Text,textBox1.Text);
-            string fecha = MyService.fechahoy();
+            string fechahoy = MyService.fechahoy();
             int ntop = MyService.top(textBox1.Text);
             int nprestados = MyService.nprestados_cliente(textBox2.Text) - 1;
             int disponibles = MyService.disponibles(textBox1.Text) + 1;
             int prestados = MyService.prestamos(textBox1.Text) - 1;
             string tabla = "Libro";
-                if (MyService.Update_devolucion( prestamo, fecha))
+                if (MyService.Update_devolucion( prestamo, fechahoy))
                 {
 
-
+                    MessageBox.Show("hola "+fechahoy);
                     if (MyService.Update_Prestamo(tabla,nprestados,textBox1.Text,disponibles,ntop))
                     {
                         if (MyService.Update_clientes("Clientes",nprestados,textBox2.Text))
