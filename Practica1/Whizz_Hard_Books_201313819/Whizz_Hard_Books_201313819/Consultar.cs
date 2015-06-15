@@ -57,5 +57,12 @@ namespace Whizz_Hard_Books_201313819
             
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Prestar pres = new Prestar();
+            pres.Show();
+            this.Hide();
+        }
     }
 }

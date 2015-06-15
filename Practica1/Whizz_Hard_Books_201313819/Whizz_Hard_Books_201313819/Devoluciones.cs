@@ -42,7 +42,6 @@ namespace Whizz_Hard_Books_201313819
                 if (MyService.Update_devolucion( prestamo, fechahoy))
                 {
 
-                    MessageBox.Show("hola "+fechahoy);
                     if (MyService.Update_Prestamo(tabla,nprestados,textBox1.Text,disponibles,ntop))
                     {
                         if (MyService.Update_clientes("Clientes",nprestados,textBox2.Text))
@@ -56,11 +55,6 @@ namespace Whizz_Hard_Books_201313819
                 {
                     MessageBox.Show("Error");
                 }
-
- 
-
-
-
         }
     }
 }
