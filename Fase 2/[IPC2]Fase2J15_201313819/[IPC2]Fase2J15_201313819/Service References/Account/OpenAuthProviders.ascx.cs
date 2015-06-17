@@ -39,5 +39,10 @@ namespace _IPC2_Fase2J15_201313819.Account
         {
             return Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes().Select(t => t.AuthenticationType);
         }
+
+        protected void providerDetails_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,7 +42,8 @@ namespace _IPC2_Fase2J15_201313819
 
                     MessageBox.Show("Todo bien :D");
                     Response.Redirect("~/Default");
-                    
+                    Session["Usuario"] = user;
+                    Response.StatusCode = 401;
                 }
             }
 

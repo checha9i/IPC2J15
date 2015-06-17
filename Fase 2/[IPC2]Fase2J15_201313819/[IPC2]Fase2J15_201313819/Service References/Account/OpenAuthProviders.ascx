@@ -4,7 +4,7 @@
     <h4>Utilice otro servicio para iniciar sesión.</h4>
     <hr />
     <asp:ListView runat="server" ID="providerDetails" ItemType="System.String"
-        SelectMethod="GetProviderNames" ViewStateMode="Disabled">
+        SelectMethod="GetProviderNames" ViewStateMode="Disabled" OnSelectedIndexChanged="providerDetails_SelectedIndexChanged">
         <ItemTemplate>
             <p>
                 <button type="submit" class="btn btn-default" name="provider" value="<%#: Item %>"
