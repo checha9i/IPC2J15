@@ -9,9 +9,14 @@ namespace _IPC2_Fase2J15_201313819
 {
     public partial class _Default : Page
     {
-        protected void Page_Load2(object sender, EventArgs e)
+        protected void Page_Load3(object sender, EventArgs e)
         {
-            Label1.Text = Session["UserName"].ToString();
+
+            string tipo =Session["Tipo"].ToString();
+            if (tipo != "Empleado")
+            {
+                Response.Redirect("~/Default");
+            }
         }
     }
 }

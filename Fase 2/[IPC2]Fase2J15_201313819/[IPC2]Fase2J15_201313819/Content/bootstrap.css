@@ -183,8 +183,8 @@ input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
-    top: 0px;
-    left: 15px;
+    top: 5px;
+    left: 7px;
     height: 36px;
     width: 131px;
 }
@@ -4231,8 +4231,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-toggle .icon-bar {
   display: block;
-  width: 22px;
-  height: 2px;
   border-radius: 1px;
 }
 

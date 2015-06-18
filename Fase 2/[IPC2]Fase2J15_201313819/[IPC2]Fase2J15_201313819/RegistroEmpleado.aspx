@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Registro de Clientes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClienteRegistro.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.ClienteRegistro" %>
+﻿<%@ Page Title="Registro de Empleados" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegistroEmpleado.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.RegistroEmpleado" %>
+
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
     <p class="text-danger">
@@ -38,11 +39,9 @@
                 <tr>
                     <td>
 
-            <asp:Label ID="Label3" runat="server" Text="Nombre de Usuario"></asp:Label>
-
-                        *</td>
+                        Sueldo</td>
                     <td>
-            <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+            <asp:TextBox ID="Sueldo" runat="server"></asp:TextBox>
 
                     </td>
                     <td>&nbsp;</td>
@@ -85,11 +84,19 @@
                 <tr>
                     <td>
 
-            <asp:Label ID="Label7" runat="server" Text="NIT"></asp:Label>
-
-            *</td>
+                        Nombre del departamento</td>
                     <td>
-            <asp:TextBox ID="nit" runat="server"></asp:TextBox>
+            <asp:TextBox ID="depa" runat="server"></asp:TextBox>
+
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+
+                        Nombre de la sucursal</td>
+                    <td>
+            <asp:TextBox ID="nombresucu" runat="server"></asp:TextBox>
 
                     </td>
                     <td>&nbsp;</td>
@@ -144,33 +151,22 @@
                 <tr>
                     <td>
 
-            <asp:Label ID="Label12" runat="server" Text="Tarjeta"></asp:Label>
-
-                        *</td>
+                        Correo</td>
                     <td>
-            <asp:TextBox ID="Tarjeta" runat="server"></asp:TextBox>
+            <asp:TextBox ID="Correo" runat="server"></asp:TextBox>
 
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
                     <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
-                        <asp:ListItem>Tipo de Tarjeta</asp:ListItem>
-                        <asp:ListItem>VISA</asp:ListItem>
-                        <asp:ListItem>Master Card</asp:ListItem>
-                        <asp:ListItem>American Express</asp:ListItem>
-                    </asp:DropDownList>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
+                        Rol</td>
                     <td>
-                    <asp:Label ID="Label13" runat="server" Text="Nombre de la Tarjeta"></asp:Label>
-                        *</td>
-                    <td>
-                    <asp:TextBox ID="nombretarjeta" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownList1" runat="server">
+                            <asp:ListItem>Seleccione Rol </asp:ListItem>
+                            <asp:ListItem>Empleado</asp:ListItem>
+                            <asp:ListItem>Administrador</asp:ListItem>
+                        </asp:DropDownList>
 
                     </td>
                     <td>&nbsp;</td>

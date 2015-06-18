@@ -32,20 +32,58 @@ namespace _IPC2_Fase2J15_201313819
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+            //servicioweb.WebServiceSoapClient service = new servicioweb.WebServiceSoapClient();
+            //string estado = "1";
+            //string count = service.estado_sesion(estado).ToString();
+
+            //if (service.estado_sesion(1)>=1)
+            //{
+            //    Response.Redirect("~/Default");
+            //}
+
+            
             string user, pass;
             user = UserName.Text;
             pass = Password.Text;
-        
 
-                if (service.usuario_verificar(user,pass) == 1)
+            if (DropDownList1.SelectedItem.ToString() == "Cliente")
+            {
+                if (service.usuario_verificar(user, pass) == 1)
                 {
+                    Session["UserName"] = user ;
 
-                    MessageBox.Show("Todo bien :D");
-                    Response.Redirect("~/Default");
-                    Session["Usuario"] = user;
-                    Response.StatusCode = 401;
+
+                    MessageBox.Show("Inicio Sesion"+Session["UserName"].ToString());
+
+                    Response.Redirect("~/DefaultCliente");
+
                 }
+                else
+                {
+                    MessageBox.Show("Usuario o Password Erroneos");
+                }
+
+
             }
+            else if(DropDownList1.SelectedItem.ToString() == "Empleado")
+            {
+                if (service.empleado_verificar(user, pass) == 1)
+                {
+                    Session["UserName"] = service.id_empleado_sesion(user); ;
+                    Session["Tipo"] = "Empleado";
+
+                    MessageBox.Show("Inicio Sesion como "+Session["usuario"]);
+
+                    Response.Redirect("~/DefaultEmpleado");
+
+                }
+                else { MessageBox.Show("Usuario o Password Erroneos"); 
+                }
+
+
+            }
+        }
 
         protected void LoginView1_ViewChanged(object sender, EventArgs e)
         {

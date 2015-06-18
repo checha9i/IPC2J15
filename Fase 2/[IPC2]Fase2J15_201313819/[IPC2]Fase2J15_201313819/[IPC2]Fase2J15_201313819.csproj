@@ -149,13 +149,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="ActualizarDatos.aspx" />
     <Content Include="ClienteRegistro.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Cotizacion.aspx" />
+    <Content Include="DefaultEmpleado.aspx" />
     <Content Include="DefaultCliente.aspx" />
-    <Content Include="Service References\Account\Login.aspx" />
-    <Content Include="Service References\Account\Manage.aspx" />
-    <Content Include="Service References\Account\OpenAuthProviders.ascx" />
-    <Content Include="Service References\Account\Register.aspx" />
-    <Content Include="Service References\Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -166,7 +170,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Service References\Account\Web.config" />
+    <Content Include="Account\Web.config" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Service References\servicioweb\WebService.disco" />
     <None Include="Service References\servicioweb\configuration91.svcinfo" />
@@ -175,6 +179,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="RegistroEmpleado.aspx" />
     <Content Include="WebService.asmx" />
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -209,7 +214,6 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -218,6 +222,8 @@
     <Content Include="Site.Mobile.Master" />
     <None Include="Service References\servicioweb\WebService.wsdl" />
     <Content Include="Site1.Master" />
+    <Content Include="Site2.Master" />
+    <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -226,12 +232,33 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarDatos.aspx.cs">
+      <DependentUpon>ActualizarDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarDatos.aspx.designer.cs">
+      <DependentUpon>ActualizarDatos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ClienteRegistro.aspx.cs">
       <DependentUpon>ClienteRegistro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ClienteRegistro.aspx.designer.cs">
       <DependentUpon>ClienteRegistro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizacion.aspx.cs">
+      <DependentUpon>Cotizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizacion.aspx.designer.cs">
+      <DependentUpon>Cotizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultEmpleado.aspx.cs">
+      <DependentUpon>DefaultEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultEmpleado.aspx.designer.cs">
+      <DependentUpon>DefaultEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="DefaultCliente.aspx.cs">
       <DependentUpon>DefaultCliente.aspx</DependentUpon>
@@ -240,39 +267,39 @@
     <Compile Include="DefaultCliente.aspx.designer.cs">
       <DependentUpon>DefaultCliente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Service References\Account\Login.aspx.cs">
+    <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Service References\Account\Login.aspx.designer.cs">
+    <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Service References\Account\Manage.aspx.cs">
+    <Compile Include="Account\Manage.aspx.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Service References\Account\Manage.aspx.designer.cs">
+    <Compile Include="Account\Manage.aspx.designer.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Service References\Account\OpenAuthProviders.ascx.cs">
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Service References\Account\OpenAuthProviders.ascx.designer.cs">
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Service References\Account\Register.aspx.cs">
+    <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Service References\Account\Register.aspx.designer.cs">
+    <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Service References\Account\RegisterExternalLogin.aspx.cs">
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Service References\Account\RegisterExternalLogin.aspx.designer.cs">
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -311,6 +338,13 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroEmpleado.aspx.cs">
+      <DependentUpon>RegistroEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroEmpleado.aspx.designer.cs">
+      <DependentUpon>RegistroEmpleado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service References\servicioweb\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -336,6 +370,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">

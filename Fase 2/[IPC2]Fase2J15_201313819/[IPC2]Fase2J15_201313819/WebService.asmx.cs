@@ -298,7 +298,7 @@ public DataSet busqueda(string IDMask)
 
 
 
-    //carnet a asignar
+    //tarjeta ya existente
 [WebMethod]
 public int busquetarjetaexiste(string notarjeta)
 {
@@ -376,13 +376,9 @@ public int usuario_verificar(string username,string pass)
     return cant;
 }
 
-
-
-
-
-    //numero de libros disponibles
-    [WebMethod]
-    public int disponibles(string libro)
+//Verificar empleado
+[WebMethod]
+public int empleado_verificar(string username, string pass)
 {
 
     int cant = 0;
@@ -391,7 +387,7 @@ public int usuario_verificar(string username,string pass)
     {
         SqlCommand cm = new SqlCommand();
         cm.Connection = conexion;
-        cm.CommandText = "SELECT (Disponibles) FROM Libro where ID_Libro=" + libro;
+        cm.CommandText = "SELECT COUNT(*) FROM Empleado where ID_Empleado='" + username + "' and contraseña='" + pass + "'";
         conectarServidor();
         cant = Convert.ToInt32(cm.ExecuteScalar());
         if (conectarServidor())
@@ -418,6 +414,138 @@ public int usuario_verificar(string username,string pass)
     }
     return cant;
 }
+
+
+
+
+//numero de Empleado a registrar
+
+[WebMethod]
+public int noEmpleado()
+{
+
+    int cant = 0;
+    Boolean respuesta;
+    try
+    {
+        SqlCommand cm = new SqlCommand();
+        cm.Connection = conexion;
+        cm.CommandText = "SELECT COUNT(*) FROM Empleado;";
+        conectarServidor();
+        cant = Convert.ToInt32(cm.ExecuteScalar());
+        if (conectarServidor())
+        {
+            if (cm.ExecuteNonQuery() == 1)
+                respuesta = true;
+            else
+                respuesta = false;
+
+        }
+        else
+        {
+            respuesta = false;
+        }
+    }
+    catch (Exception e)
+    {
+        respuesta = false;
+        MostrarError = "Erro: " + e.Message.ToString();
+    }
+    finally
+    {
+        conexion.Close();
+    }
+    return cant;
+}
+
+//obtiene numero de sucursal
+[WebMethod]
+public int select_sucursal(string nombresucur)
+{
+
+    int cant = 0;
+    Boolean respuesta;
+    try
+    {
+        SqlCommand cm = new SqlCommand();
+        cm.Connection = conexion;
+        cm.CommandText = "SELECT ID_Sucursal FROM Sucursal where Nombre_Sucursal='" + nombresucur +"'";
+        conectarServidor();
+        cant = Convert.ToInt32(cm.ExecuteScalar());
+        if (conectarServidor())
+        {
+            if (cm.ExecuteNonQuery() == 1)
+                respuesta = true;
+            else
+                respuesta = false;
+
+        }
+        else
+        {
+            respuesta = false;
+        }
+    }
+    catch (Exception e)
+    {
+        respuesta = false;
+        MostrarError = "Erro: " + e.Message.ToString();
+    }
+    finally
+    {
+        conexion.Close();
+    }
+    return cant;
+}
+
+//obtiene numero de sucursal
+[WebMethod]
+public int verificar_depa(string nombredepa,int sucur)
+{
+
+    int cant = 0;
+    Boolean respuesta;
+    try
+    {
+        SqlCommand cm = new SqlCommand();
+        cm.Connection = conexion;
+        cm.CommandText = "SELECT ID_Departamento FROM Departamento where Nombre_depa='" + nombredepa +"' and ID_Sucursal='" +sucur+"'";
+        conectarServidor();
+        cant = Convert.ToInt32(cm.ExecuteScalar());
+        if (conectarServidor())
+        {
+            if (cm.ExecuteNonQuery() == 1)
+                respuesta = true;
+            else
+                respuesta = false;
+
+        }
+        else
+        {
+            respuesta = false;
+        }
+    }
+    catch (Exception e)
+    {
+        respuesta = false;
+        MostrarError = "Erro: " + e.Message.ToString();
+    }
+    finally
+    {
+        conexion.Close();
+    }
+    return cant;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -555,9 +683,8 @@ public int usuario_verificar(string username,string pass)
 
 
 
-    //cantidad prestados cliente
     [WebMethod]
-    public int nprestados_cliente(string cliente)
+    public int id_cliente_sesion(string ID_Cliente)
     {
 
         int cant = 0;
@@ -566,7 +693,85 @@ public int usuario_verificar(string username,string pass)
         {
             SqlCommand cm = new SqlCommand();
             cm.Connection = conexion;
-            cm.CommandText = "SELECT n_prestamos FROM Clientes WHERE Carnet=" + cliente;
+            cm.CommandText = "SELECT ID_Cliente FROM Clientes WHERE usuario='" + ID_Cliente+"'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
+
+    [WebMethod]
+    public int id_empleado_sesion(string ID_Empleado)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT ID_Empleado FROM Empleado WHERE ID_Empleado='" + ID_Empleado+"'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
+
+    [WebMethod]
+    public int id_sesion(string entrada)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT usuario FROM Clientes WHERE ID_Cliente='" + entrada + "'";
             conectarServidor();
             cant = Convert.ToInt32(cm.ExecuteScalar());
             if (conectarServidor())
@@ -604,56 +809,17 @@ public int usuario_verificar(string username,string pass)
     }
 
 
-    //Prestamo cambio en libro
-    [WebMethod]
-    public bool Update_Prestamo(string tabla, int prestamo, string libro, int disponibles, int top)
-    {
-        bool respuesta = false;
-        try
-        {
-            SqlCommand cm = new SqlCommand();
-            cm.Connection = conexion;
-            cm.CommandText = "Update "+tabla+" Set Prestados="+prestamo+", Disponibles="+disponibles+", topprestados="+top +"Where ID_Libro="+libro+" ";
-            conectarServidor();
-
-            if (conectarServidor())
-            {
-                if (cm.ExecuteNonQuery() == 1)
-                    respuesta = true;
-                else
-                    respuesta = false;
-
-            }
-            else
-            {
-                respuesta = false;
-            }
-
-        }
-        catch (Exception e)
-        {
-            respuesta = false;
-            MostrarError = "Erro: " + e.Message.ToString();
-        }
-        finally
-        {
-            conexion.Close();
-        }
-
-        return respuesta;
-    }
-
 
     //reservas cambio en libro
     [WebMethod]
-    public bool Update_Reserva(string tabla, int reservas,string libro)
+    public bool Update_sesion(int usuario)
     {
         bool respuesta = false;
         try
         {
             SqlCommand cm = new SqlCommand();
             cm.Connection = conexion;
-            cm.CommandText = "Update "+tabla+" Set Reservados=" + reservas + " Where ID_Libro="+libro;
+            cm.CommandText = "Update sesion Set usuario='" + usuario + "' Where ID_sesion='"+1+"'";
             conectarServidor();
 
             if (conectarServidor())

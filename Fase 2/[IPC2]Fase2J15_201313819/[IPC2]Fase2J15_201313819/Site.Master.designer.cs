@@ -10,7 +10,7 @@
 namespace _IPC2_Fase2J15_201313819 {
     
     
-    public partial class SiteMaster {
+    public partial class Site {
         
         /// <summary>
         /// Control MainContent.

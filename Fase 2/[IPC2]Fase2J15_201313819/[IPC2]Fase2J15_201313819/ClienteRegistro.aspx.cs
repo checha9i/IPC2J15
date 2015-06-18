@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _IPC2_Fase2J15_201313819.Models;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,6 +21,12 @@ namespace _IPC2_Fase2J15_201313819
         protected void Button1_Click(object sender, EventArgs e)
         {
 
+          
+
+
+
+
+
             String Tabla = "Clientes";
 
             String nombre, dpi, direccion, Telefono, Telefono2, Telefono3,Apellido,NIT,contraseña,usern;
@@ -37,6 +45,7 @@ namespace _IPC2_Fase2J15_201313819
             NIT = nit.Text;
             contraseña = Password.Text;
             string ap = "No aprobado";
+
             //string a enviar
 
 
@@ -47,7 +56,7 @@ namespace _IPC2_Fase2J15_201313819
             Tipo = DropDownList1.SelectedItem.ToString();
             
             nombrep = nombretarjeta.Text;
-            String Valoresclient = "'" + ID_cliente + "','" + dpi + "','" + nombre + "','" + Apellido + "','" + NIT + "','" + Telefono + "','" + Telefono2 + "','" + Telefono3 + "','" + direccion + "','" + tarj1 + "','" + usern + "','" + contraseña + "','" + ap + "'";           
+            String Valoresclient = "'" + ID_cliente + "','" + dpi + "','" + nombre + "','" + Apellido + "','" + NIT + "','" + Telefono + "','" + Telefono2 + "','" + Telefono3 + "','" + direccion + "','" + tarj1 + "','" + usern + "','" + contraseña + "','" + ap +"'";           
 
             String TablaTarj = "Tarjeta";
             String CamposTarj = "No_Tarjeta,Tipo,Nombre_Propietario";
@@ -67,8 +76,8 @@ namespace _IPC2_Fase2J15_201313819
                 if (servicio.Registrar(Tabla, CamposClientes, Valoresclient))
                 {
                     MessageBox.Show("Cliente Agregado Exitosamente");
-
-
+                    Response.Redirect("~/DefaultCliente");
+                 //Session["UserName"]=; 
 
                 }
                 else

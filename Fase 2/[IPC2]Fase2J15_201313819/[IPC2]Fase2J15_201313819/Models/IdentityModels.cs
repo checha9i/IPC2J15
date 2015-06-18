@@ -27,6 +27,11 @@ namespace _IPC2_Fase2J15_201313819.Models
             : base(new UserStore<ApplicationUser>(new ApplicationDbContext()))
         {
         }
+
+        internal ApplicationUser Find(string user, string pass)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

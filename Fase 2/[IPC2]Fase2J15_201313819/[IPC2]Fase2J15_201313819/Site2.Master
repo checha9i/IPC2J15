@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="_IPC2_Fase2J15_201313819.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="_IPC2_Fase2J15_201313819.Site2" %>
 
 <!DOCTYPE html>
 
@@ -54,26 +54,11 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/Cotizacion">Cotizar Producto</a></li>
                         <li><a runat="server" href="~/About">Acerca de</a></li>
                         <li><a runat="server" href="~/Contact">Contacto</a></li>
-                       
-                    </ul>
-           
-                              <ul class="nav navbar-nav navbar-right">
-                     <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administrar Cuenta<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-             <li><a runat="server" href="~/Default">Cerrar Sesion</a></li>
-      </ul>
+                        <li><a runat="server" href="~/Default">Cerrar Sesion</a></li>
 
+                    </ul>
                 </div>
                 
 
