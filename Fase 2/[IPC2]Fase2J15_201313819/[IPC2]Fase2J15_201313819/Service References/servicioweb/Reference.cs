@@ -144,10 +144,10 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_sesion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int id_sesion(string entrada);
+        int id_sesion();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_sesion", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> id_sesionAsync(string entrada);
+        System.Threading.Tasks.Task<int> id_sesionAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/fechahoy", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -370,12 +370,12 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
             return base.Channel.id_empleado_sesionAsync(ID_Empleado);
         }
         
-        public int id_sesion(string entrada) {
-            return base.Channel.id_sesion(entrada);
+        public int id_sesion() {
+            return base.Channel.id_sesion();
         }
         
-        public System.Threading.Tasks.Task<int> id_sesionAsync(string entrada) {
-            return base.Channel.id_sesionAsync(entrada);
+        public System.Threading.Tasks.Task<int> id_sesionAsync() {
+            return base.Channel.id_sesionAsync();
         }
         
         public string fechahoy() {

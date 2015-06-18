@@ -1,4 +1,6 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="_IPC2_Fase2J15_201313819.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site3.master.cs" Inherits="_IPC2_Fase2J15_201313819.Site3" %>
+
+
 
 <!DOCTYPE html>
 

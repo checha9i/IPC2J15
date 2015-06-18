@@ -17,7 +17,7 @@ namespace _IPC2_Fase2J15_201313819
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            Label1.Text = Session["UserName"].ToString();
+            Label1.Text = servicio.id_sesion().ToString(); 
         }
 
         protected void Button1_Click(object sender, EventArgs e)

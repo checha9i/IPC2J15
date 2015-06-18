@@ -762,7 +762,7 @@ public int verificar_depa(string nombredepa,int sucur)
 
 
     [WebMethod]
-    public int id_sesion(string entrada)
+    public int id_sesion()
     {
 
         int cant = 0;
@@ -771,7 +771,7 @@ public int verificar_depa(string nombredepa,int sucur)
         {
             SqlCommand cm = new SqlCommand();
             cm.Connection = conexion;
-            cm.CommandText = "SELECT usuario FROM Clientes WHERE ID_Cliente='" + entrada + "'";
+            cm.CommandText = "SELECT usuario FROM sesion WHERE ID_sesion='1'";
             conectarServidor();
             cant = Convert.ToInt32(cm.ExecuteScalar());
             if (conectarServidor())

@@ -10,16 +10,7 @@
 namespace _IPC2_Fase2J15_201313819 {
     
     
-    public partial class ActualizarDatos {
-        
-        /// <summary>
-        /// Control ErrorMessage.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ErrorMessage;
+    public partial class CargaCSV {
         
         /// <summary>
         /// Control Label1.
@@ -31,13 +22,31 @@ namespace _IPC2_Fase2J15_201313819 {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control Actualizar.
+        /// Control FileUpload1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Actualizar;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        
+        /// <summary>
+        /// Control Button2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Control GridView1.
@@ -49,21 +58,21 @@ namespace _IPC2_Fase2J15_201313819 {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// Control DetailsView1.
+        /// Control labeloculto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
+        protected global::System.Web.UI.WebControls.Label labeloculto;
         
         /// <summary>
-        /// Control tarjeta.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource tarjeta;
+        protected global::System.Web.UI.WebControls.Label Label3;
     }
 }
