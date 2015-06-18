@@ -23,7 +23,7 @@ namespace _IPC2_Fase2J15_201313819
         protected void Button1_Click(object sender, EventArgs e)
         {
             
-            //          servicioweb.WebServiceSoapClient servicio=new servicioweb.WebServiceSoapClient();
+            //         servicioweb.WebServiceSoapClient servicio=new servicioweb.WebServiceSoapClient();
 
 
 

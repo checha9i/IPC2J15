@@ -285,6 +285,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="bulkinsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bulkinsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bulkinsertResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="fechahoy">
         <s:complexType />
       </s:element>
@@ -498,6 +512,12 @@
   <wsdl:message name="id_sesionSoapOut">
     <wsdl:part name="parameters" element="tns:id_sesionResponse" />
   </wsdl:message>
+  <wsdl:message name="bulkinsertSoapIn">
+    <wsdl:part name="parameters" element="tns:bulkinsert" />
+  </wsdl:message>
+  <wsdl:message name="bulkinsertSoapOut">
+    <wsdl:part name="parameters" element="tns:bulkinsertResponse" />
+  </wsdl:message>
   <wsdl:message name="fechahoySoapIn">
     <wsdl:part name="parameters" element="tns:fechahoy" />
   </wsdl:message>
@@ -616,6 +636,10 @@
     <wsdl:operation name="id_sesion">
       <wsdl:input message="tns:id_sesionSoapIn" />
       <wsdl:output message="tns:id_sesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="bulkinsert">
+      <wsdl:input message="tns:bulkinsertSoapIn" />
+      <wsdl:output message="tns:bulkinsertSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="fechahoy">
       <wsdl:input message="tns:fechahoySoapIn" />
@@ -812,6 +836,15 @@
     </wsdl:operation>
     <wsdl:operation name="id_sesion">
       <soap:operation soapAction="http://Quetzal_Express.org/id_sesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bulkinsert">
+      <soap:operation soapAction="http://Quetzal_Express.org/bulkinsert" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1049,6 +1082,15 @@
     </wsdl:operation>
     <wsdl:operation name="id_sesion">
       <soap12:operation soapAction="http://Quetzal_Express.org/id_sesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bulkinsert">
+      <soap12:operation soapAction="http://Quetzal_Express.org/bulkinsert" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

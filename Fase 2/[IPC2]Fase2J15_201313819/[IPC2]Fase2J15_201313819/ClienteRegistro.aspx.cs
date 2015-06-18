@@ -76,7 +76,7 @@ namespace _IPC2_Fase2J15_201313819
                 if (servicio.Registrar(Tabla, CamposClientes, Valoresclient))
                 {
 
-                    servicio.Update_sesion(ID_cliente);
+                  servicio.Update_sesion(ID_cliente);
                     MessageBox.Show("Cliente Agregado Exitosamente");
                     Response.Redirect("~/DefaultCliente");
                  //Session["UserName"]=; 

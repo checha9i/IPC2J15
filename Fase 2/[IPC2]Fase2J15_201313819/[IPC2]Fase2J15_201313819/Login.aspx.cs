@@ -51,7 +51,7 @@ namespace _IPC2_Fase2J15_201313819
             {
                 if (service.usuario_verificar(user, pass) == 1)
                 {
-                   service.Update_sesion( service.id_cliente_sesion(user));
+                 service.Update_sesion( service.id_cliente_sesion(user));
                     
 
                     MessageBox.Show("Inicio Sesion");
