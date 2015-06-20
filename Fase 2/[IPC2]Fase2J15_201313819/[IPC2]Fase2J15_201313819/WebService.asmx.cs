@@ -421,7 +421,7 @@ public int empleado_verificar(string username, string pass)
 //numero de Empleado a registrar
 
 [WebMethod]
-public int noEmpleado()
+public int noEmpleado(string dpi)
 {
 
     int cant = 0;
@@ -430,7 +430,7 @@ public int noEmpleado()
     {
         SqlCommand cm = new SqlCommand();
         cm.Connection = conexion;
-        cm.CommandText = "SELECT COUNT(*) FROM Empleado;";
+        cm.CommandText = "SELECT ID_Empleado FROM Empleado where dpi='"+dpi+"';";
         conectarServidor();
         cant = Convert.ToInt32(cm.ExecuteScalar());
         if (conectarServidor())
@@ -799,7 +799,7 @@ public int verificar_depa(string nombredepa,int sucur)
         return cant;
     }
 
-    //reservas cambio en libro
+    //csv empleado
     [WebMethod]
     public bool bulkinsert(string path)
     {
@@ -810,20 +810,19 @@ public int verificar_depa(string nombredepa,int sucur)
             cm.Connection = conexion;
             cm.CommandText = "BULK INSERT dbo.Empleado FROM '" + path + "' WITH ( FIELDTERMINATOR = ',', ROWTERMINATOR = '\n' )";
             conectarServidor();
-
+            
+            
             if (conectarServidor())
             {
                 if (cm.ExecuteNonQuery() == 1)
                     respuesta = true;
                 else
                     respuesta = false;
-
             }
             else
             {
                 respuesta = false;
             }
-
         }
         catch (Exception e)
         {
@@ -837,22 +836,41 @@ public int verificar_depa(string nombredepa,int sucur)
 
         return respuesta;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //fecha
+    //csv impuestos
+    [WebMethod]
+    public bool bulkinsert_impuesto(string path)
+    {
+        bool respuesta = false;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "BULK INSERT dbo.Impuesto  FROM '" + path + "' WITH ( FIELDTERMINATOR = ',', ROWTERMINATOR = '\n' )";
+            conectarServidor();
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return respuesta;
+    }
+        //fecha
     [WebMethod]
     public string fechahoy() {
 

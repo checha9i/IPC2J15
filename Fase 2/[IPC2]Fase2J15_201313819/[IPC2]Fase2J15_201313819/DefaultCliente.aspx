@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="DefaultCliente.aspx.cs" Inherits="_IPC2_Fase2J15_201313819._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="DefaultCliente.aspx.cs" Inherits="_IPC2_Fase2J15_201313819._DefaultAdministrador" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 

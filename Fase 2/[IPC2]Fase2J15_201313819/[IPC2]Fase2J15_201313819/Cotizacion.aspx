@@ -22,14 +22,14 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="height: 21px">
                 <asp:Label ID="Label4" runat="server" Text="Seleccione Categoria"></asp:Label>
             </td>
-            <td>
-                <asp:DropDownList ID="DropDownList1" runat="server">
+            <td style="height: 21px">
+                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="Impuestos" DataTextField="Nombre" DataValueField="Nombre" Font-Size="Medium" Height="80px" Width="315px">
                 </asp:DropDownList>
             </td>
-            <td>&nbsp;</td>
+            <td style="height: 21px"></td>
         </tr>
         <tr>
             <td>
@@ -41,7 +41,9 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td>
+                <asp:SqlDataSource ID="Impuestos" runat="server" ConnectionString="Data Source=JAVIER;Initial Catalog=Fase2J15;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Nombre] FROM [Impuesto] ORDER BY [Nombre]"></asp:SqlDataSource>
+            </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>

@@ -209,15 +209,42 @@ namespace _IPC2_Fase2J15_201313819
         {
 
             servicioweb.WebServiceSoapClient servicio = new servicioweb.WebServiceSoapClient();
-            if (servicio.bulkinsert(lblOculto.Text))
-            {
-                MessageBox.Show("error");
 
-            }
-            else { 
 
-                MessageBox.Show("correcto");
+            if (DropDownList1.Text == "Empleado") {
+                if (servicio.bulkinsert(lblOculto.Text))
+                {
+
+                    MessageBox.Show("error");
+                }
+                else
+                {
+
+                    MessageBox.Show("correcto");
+                }
+ 
+            
+            
             }
+            else if (DropDownList1.Text=="Impuesto"){
+                if (servicio.bulkinsert_impuesto(lblOculto.Text))
+                {
+
+                    MessageBox.Show("error");
+                }
+                else
+                {
+
+                    MessageBox.Show("correcto");
+                }
+            
+            
+            
+            }
+
+
+
+
         }
 
 

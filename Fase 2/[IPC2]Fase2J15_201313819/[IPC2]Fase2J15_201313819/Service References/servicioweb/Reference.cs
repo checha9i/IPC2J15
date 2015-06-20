@@ -156,6 +156,13 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/bulkinsert", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> bulkinsertAsync(string path);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/bulkinsert_impuesto", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool bulkinsert_impuesto(string path);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/bulkinsert_impuesto", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> bulkinsert_impuestoAsync(string path);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/fechahoy", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string fechahoy();
@@ -391,6 +398,14 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         
         public System.Threading.Tasks.Task<bool> bulkinsertAsync(string path) {
             return base.Channel.bulkinsertAsync(path);
+        }
+        
+        public bool bulkinsert_impuesto(string path) {
+            return base.Channel.bulkinsert_impuesto(path);
+        }
+        
+        public System.Threading.Tasks.Task<bool> bulkinsert_impuestoAsync(string path) {
+            return base.Channel.bulkinsert_impuestoAsync(path);
         }
         
         public string fechahoy() {

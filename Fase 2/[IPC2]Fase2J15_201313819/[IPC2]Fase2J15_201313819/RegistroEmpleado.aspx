@@ -115,30 +115,6 @@
                 <tr>
                     <td>
 
-            <asp:Label ID="Label9" runat="server" Text="Telefono2"></asp:Label>
-
-                    </td>
-                    <td>
-            <asp:TextBox ID="telef2" runat="server"></asp:TextBox>
-
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>
-
-            <asp:Label ID="Label10" runat="server" Text="Telefono3"></asp:Label>
-
-                    </td>
-                    <td>
-            <asp:TextBox ID="telef3" runat="server"></asp:TextBox>
-
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>
-
             <asp:Label ID="Label11" runat="server" Text="Direccion"></asp:Label>
 
                         *</td>

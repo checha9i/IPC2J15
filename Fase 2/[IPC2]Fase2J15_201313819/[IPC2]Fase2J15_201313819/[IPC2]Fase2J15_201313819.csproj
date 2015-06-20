@@ -155,6 +155,7 @@
     <Content Include="ClienteRegistro.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Cotizacion.aspx" />
+    <Content Include="DefaultAdministrador.aspx" />
     <Content Include="DefaultEmpleado.aspx" />
     <Content Include="DefaultCliente.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -167,6 +168,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GestionCobro.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -227,6 +229,7 @@
     <Content Include="Site2.Master" />
     <Content Include="Site.Master" />
     <Content Include="Site3.Master" />
+    <Content Include="Site4.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -262,6 +265,13 @@
     </Compile>
     <Compile Include="Cotizacion.aspx.designer.cs">
       <DependentUpon>Cotizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultAdministrador.aspx.cs">
+      <DependentUpon>DefaultAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultAdministrador.aspx.designer.cs">
+      <DependentUpon>DefaultAdministrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="DefaultEmpleado.aspx.cs">
       <DependentUpon>DefaultEmpleado.aspx</DependentUpon>
@@ -336,6 +346,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GestionCobro.aspx.cs">
+      <DependentUpon>GestionCobro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionCobro.aspx.designer.cs">
+      <DependentUpon>GestionCobro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -394,6 +411,13 @@
     </Compile>
     <Compile Include="Site3.Master.designer.cs">
       <DependentUpon>Site3.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site4.Master.cs">
+      <DependentUpon>Site4.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site4.Master.designer.cs">
+      <DependentUpon>Site4.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">

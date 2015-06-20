@@ -8,10 +8,10 @@
         <asp:FileUpload ID="FileUpload1" runat="server" />
         <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Subir" />
     
-        <asp:Button ID="Button2" runat="server" Text="Cargar Datos-Tabla" 
+        <asp:Button ID="Button2" runat="server" Text="Vista Previa" 
             onclick="Button2_Click" />
     
-    <asp:Label ID="lblOculto" runat="server"></asp:Label>
+    <asp:Label ID="lblOculto" runat="server" Visible="False"></asp:Label>
     <br />
     <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     <asp:GridView ID="GridView1" runat="server" Height="251px" Width="420px" CellPadding="4" ForeColor="#333333" GridLines="None">
@@ -31,7 +31,19 @@
 
 
 
-        <asp:Button ID="Button3" runat="server" Text="Guardar en Base de Datos" 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Escoja entre Impuestos o Empleados&nbsp;&nbsp;&nbsp; dependiendo lo que desee guardar&nbsp;&nbsp;&nbsp;
+        <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:ListItem>Empleados</asp:ListItem>
+            <asp:ListItem>Impuestos</asp:ListItem>
+        </asp:DropDownList>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
+
+
+
+        <asp:Button runat="server" Text="Guardar a Base de Datos" 
             onclick="Button3_Click" />
 
 
