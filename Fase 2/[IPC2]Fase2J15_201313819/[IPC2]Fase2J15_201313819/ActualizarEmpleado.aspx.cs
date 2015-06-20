@@ -7,14 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace _IPC2_Fase2J15_201313819
 {
-    public partial class Site2 : System.Web.UI.MasterPage
+    public partial class ActualizarEmpleado : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Tipo"].ToString() != "Empleado")
-            {
-                Response.Redirect("Default");
-            }
 
         }
     }

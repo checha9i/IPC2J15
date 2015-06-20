@@ -29,8 +29,8 @@ namespace _IPC2_Fase2J15_201313819
 
             String Tabla = "Clientes";
 
-            String nombre, dpi, direccion, Telefono, Telefono2, Telefono3,Apellido,NIT,contraseña,usern;
-            String CamposClientes = "ID_Cliente, DPI, Nombre, Apellido, NIT, Telefono, Telefono2, Telefono3, Direccion,Tarjeta, usuario,contraseña,Aprobacion";
+            String nombre, dpi, direccion, Telefono, Apellido,NIT,contraseña,usern;
+            String CamposClientes = "ID_Cliente, DPI, Nombre, Apellido, NIT, Telefono, Direccion,Tarjeta, usuario,contraseña,Aprobacion";
 
             //Variables de tabla clientes
             int ID_cliente = servicio.noClinte() + 1;
@@ -38,8 +38,7 @@ namespace _IPC2_Fase2J15_201313819
             dpi = DPI.Text;
             direccion = Direccion.Text;
             Telefono = telef.Text;
-            Telefono2 = telef2.Text;
-            Telefono3 = telef3.Text;
+
             Apellido = apellid.Text;
             usern = UserName.Text;
             NIT = nit.Text;
@@ -56,7 +55,7 @@ namespace _IPC2_Fase2J15_201313819
             Tipo = DropDownList1.SelectedItem.ToString();
             
             nombrep = nombretarjeta.Text;
-            String Valoresclient = "'" + ID_cliente + "','" + dpi + "','" + nombre + "','" + Apellido + "','" + NIT + "','" + Telefono + "','" + Telefono2 + "','" + Telefono3 + "','" + direccion + "','" + tarj1 + "','" + usern + "','" + contraseña + "','" + ap +"'";           
+            String Valoresclient = "'" + ID_cliente + "','" + dpi + "','" + nombre + "','" + Apellido + "','" + NIT + "','" + Telefono + "','" + direccion + "','" + tarj1 + "','" + usern + "','" + contraseña + "','" + ap +"'";           
 
             String TablaTarj = "Tarjeta";
             String CamposTarj = "No_Tarjeta,Tipo,Nombre_Propietario";
@@ -76,7 +75,8 @@ namespace _IPC2_Fase2J15_201313819
                 if (servicio.Registrar(Tabla, CamposClientes, Valoresclient))
                 {
 
-                  servicio.Update_sesion(ID_cliente);
+                    Session["UserName"] = usern;
+                    Session["Tipo"] = "Cliente";
                     MessageBox.Show("Cliente Agregado Exitosamente");
                     Response.Redirect("~/DefaultCliente");
                  //Session["UserName"]=; 

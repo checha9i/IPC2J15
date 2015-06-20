@@ -27,12 +27,13 @@ namespace _IPC2_Fase2J15_201313819
             servicioweb.WebServiceSoapClient servicio=new servicioweb.WebServiceSoapClient();
             String Tabla = "Empleado";
 
-            String nombre, dpi, direccion, Telefono, Apellido, sueldo, rol,contraseña,nombresucursal,correo;
-            String CamposClientes = "Nombre,Apellido,Telefono,Sueldo,Domicilio,DPI,Correo,ID_Depa,contraseña,Rol";
-            nombresucursal=nombresucu.Text;
+            String nombre, dpi, direccion, Telefono, Apellido, sueldo,contraseña,nombresucursal,correo;
+            String CamposClientes = "Nombre,Apellido,Telefono,Sueldo,Domicilio,DPI,Correo,ID_Depa,contraseña";
+            nombresucursal = TextBox1.Text;
             //Variables de tabla clientes
             int ID_sucursal = servicio.select_sucursal(nombresucursal);
             string nombredepa=depa.Text;
+            
             
 
             nombre = Nombr.Text;
@@ -44,22 +45,21 @@ namespace _IPC2_Fase2J15_201313819
              correo= Correo.Text;
             sueldo = Sueldo.Text;
             contraseña = Password.Text;
-            rol = DropDownList1.SelectedItem.ToString();
+     
             //string ap = "No aprobado";
             int dep=servicio.verificar_depa(nombredepa,ID_sucursal);
             //string a enviar
-            String Valores = "'"+nombre+"','"+Apellido+"','"+Telefono+"','"+sueldo+"','"+direccion+"','"+dpi+"','"+correo+"','"+dep+"','"+contraseña+"','"+rol+"'";
-
+            String Valores = "'"+nombre+"','"+Apellido+"','"+Telefono+"','"+sueldo+"','"+direccion+"','"+dpi+"','"+correo+"','"+dep+"','"+contraseña+"'";
+            
 
 
             
  if (contraseña == confirmarcontra.Text)
  {
 
-     if (servicio.verificar_depa(nombredepa, ID_sucursal) == 1)
-     {
+     
 
-
+     
 
          if (servicio.Registrar(Tabla, CamposClientes, Valores))
          {
@@ -72,10 +72,7 @@ namespace _IPC2_Fase2J15_201313819
          {
              Response.Write("Error empleado");
          }
-     }
-     else {
-         MessageBox.Show("error departamento o sucursal");
-     }
+     
 
  }
             

@@ -130,13 +130,13 @@ namespace _IPC2_Fase2J15_201313819 {
         protected global::System.Web.UI.WebControls.TextBox depa;
         
         /// <summary>
-        /// Control nombresucu.
+        /// Control TextBox1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombresucu;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
         /// Control Label8.

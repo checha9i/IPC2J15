@@ -549,44 +549,6 @@ public int verificar_depa(string nombredepa,int sucur)
 
 
 
-    //numero de libros  top
-    [WebMethod]
-    public int top(string libro)
-    {
-
-        int cant = 0;
-        Boolean respuesta;
-        try
-        {
-            SqlCommand cm = new SqlCommand();
-            cm.Connection = conexion;
-            cm.CommandText = "SELECT topprestados FROM Libro where ID_Libro=" + libro;
-            conectarServidor();
-            cant = Convert.ToInt32(cm.ExecuteScalar());
-            if (conectarServidor())
-            {
-                if (cm.ExecuteNonQuery() == 1)
-                    respuesta = true;
-                else
-                    respuesta = false;
-
-            }
-            else
-            {
-                respuesta = false;
-            }
-        }
-        catch (Exception e)
-        {
-            respuesta = false;
-            MostrarError = "Erro: " + e.Message.ToString();
-        }
-        finally
-        {
-            conexion.Close();
-        }
-        return cant;
-    }
 
     
     
@@ -601,87 +563,9 @@ public int verificar_depa(string nombredepa,int sucur)
     
     
     
-    //numero de libros prestados
-    [WebMethod]
-    public int prestamos(string libro)
-    {
+   
 
-        int cant = 0;
-        Boolean respuesta;
-        try
-        {
-            SqlCommand cm = new SqlCommand();
-            cm.Connection = conexion;
-            cm.CommandText = "SELECT (prestados) FROM Libro where ID_Libro="+libro;
-            conectarServidor();
-            cant = Convert.ToInt32(cm.ExecuteScalar());
-            if (conectarServidor())
-            {
-                if (cm.ExecuteNonQuery() == 1)
-                    respuesta = true;
-                else
-                    respuesta = false;
-
-            }
-            else
-            {
-                respuesta = false;
-            }
-        }
-        catch (Exception e)
-        {
-            respuesta = false;
-            MostrarError = "Erro: " + e.Message.ToString();
-        }
-        finally
-        {
-            conexion.Close();
-        }
-        return cant;
-    }
-
-    //numero de libros reservados
-    [WebMethod]
-    public int Reservados(string libro)
-    {
-
-        int cant = 0;
-        Boolean respuesta;
-        try
-        {
-            SqlCommand cm = new SqlCommand();
-            cm.Connection = conexion;
-            cm.CommandText = "SELECT (Reservados) FROM Libro where ID_Libro=" + libro;
-            conectarServidor();
-            cant = Convert.ToInt32(cm.ExecuteScalar());
-            if (conectarServidor())
-            {
-                if (cm.ExecuteNonQuery() == 1)
-                    respuesta = true;
-                else
-                    respuesta = false;
-
-            }
-            else
-            {
-                respuesta = false;
-            }
-        }
-        catch (Exception e)
-        {
-            respuesta = false;
-            MostrarError = "Erro: " + e.Message.ToString();
-        }
-        finally
-        {
-            conexion.Close();
-        }
-        return cant;
-    }
-
-
-
-
+   
 
     [WebMethod]
     public int id_cliente_sesion(string ID_Cliente)
@@ -759,6 +643,52 @@ public int verificar_depa(string nombredepa,int sucur)
         }
         return cant;
     }
+
+    [WebMethod]
+    public int id_tipo()
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT tipo FROM sesion WHERE ID_sesion='" + 1 + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
+
+
+
+
+
+
+
 
 
     [WebMethod]
@@ -877,18 +807,55 @@ public int verificar_depa(string nombredepa,int sucur)
        return DateTime.Now.ToString();
     }
 
-
-
-    //reservas cambio en libro
+    //Prestamo cambio en impuesto
     [WebMethod]
-    public bool Update_sesion(int usuario)
+    public bool Update_Impuesto(string nombre, string valor)
     {
         bool respuesta = false;
         try
         {
             SqlCommand cm = new SqlCommand();
             cm.Connection = conexion;
-            cm.CommandText = "Update sesion Set usuario='" + usuario + "' Where ID_sesion='"+1+"'";
+            cm.CommandText = "Update Impuesto Set valor='" + valor + "' Where Nombre='" + nombre + "' ";
+            conectarServidor();
+
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+
+        return respuesta;
+    }
+
+    //Prestamo cambio en Comision
+    [WebMethod]
+    public bool Update_Comision(string nombre, string valor)
+    {
+        bool respuesta = false;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "Update Sede Set Comision='" + valor + "' Where Nombre_Pais='" + nombre + "' ";
             conectarServidor();
 
             if (conectarServidor())
@@ -919,139 +886,16 @@ public int verificar_depa(string nombredepa,int sucur)
     }
 
 
-    //cantidad prestamos cliente
+    //Prestamo cambio en Comision
     [WebMethod]
-    public bool Update_clientes(string tabla,  int prestamos, string cliente)
+    public bool Update_cobropeso(string nombre, string valor)
     {
         bool respuesta = false;
         try
         {
             SqlCommand cm = new SqlCommand();
             cm.Connection = conexion;
-            cm.CommandText = "Update Clientes Set n_prestamos =" + prestamos+ " Where Carnet="+cliente;
-            conectarServidor();
-
-            if (conectarServidor())
-            {
-                if (cm.ExecuteNonQuery() == 1)
-                    respuesta = true;
-                else
-                    respuesta = false;
-
-            }
-            else
-            {
-                respuesta = false;
-            }
-
-        }
-        catch (Exception e)
-        {
-            respuesta = false;
-            MostrarError = "Erro: " + e.Message.ToString();
-        }
-        finally
-        {
-            conexion.Close();
-        }
-
-        return respuesta;
-    }
-
-
-    //numero de prestamo
-    [WebMethod]
-    public int nprestamo()
-    {
-
-        int cant = 0;
-        Boolean respuesta;
-        try
-        {
-            SqlCommand cm = new SqlCommand();
-            cm.Connection = conexion;
-            cm.CommandText = "SELECT COUNT(*) FROM Prestamos;";
-            conectarServidor();
-            cant = Convert.ToInt32(cm.ExecuteScalar());
-            if (conectarServidor())
-            {
-                if (cm.ExecuteNonQuery() == 1)
-                    respuesta = true;
-                else
-                    respuesta = false;
-
-            }
-            else
-            {
-                respuesta = false;
-            }
-        }
-        catch (Exception e)
-        {
-            respuesta = false;
-            MostrarError = "Erro: " + e.Message.ToString();
-        }
-        finally
-        {
-            conexion.Close();
-        }
-        return cant;
-    }
-
-
-
-    //Seleccionar prestamo para devolucion
-    [WebMethod]
-    public int select_prestamo(string carnet,string libro)
-    {
-
-        int cant = 0;
-        Boolean respuesta;
-        try
-        {
-            SqlCommand cm = new SqlCommand();
-            cm.Connection = conexion;
-            cm.CommandText = "SELECT (ID_Prestamo) FROM Prestamos where ID_Libro=" + libro+" and carnet="+carnet;
-            conectarServidor();
-            cant = Convert.ToInt32(cm.ExecuteScalar());
-            if (conectarServidor())
-            {
-                if (cm.ExecuteNonQuery() == 1)
-                    respuesta = true;
-                else
-                    respuesta = false;
-
-            }
-            else
-            {
-                respuesta = false;
-            }
-        }
-        catch (Exception e)
-        {
-            respuesta = false;
-            MostrarError = "Erro: " + e.Message.ToString();
-        }
-        finally
-        {
-            conexion.Close();
-        }
-        return cant;
-    }
-
-
-
-
-    //update al prestamo para devolver
-    [WebMethod]
-    public bool Update_devolucion(int prestamo,string fecha)
-    {
-        bool respuesta = false;
-        try
-        {
-            SqlCommand cm = new SqlCommand();
-            cm.Connection = conexion;
-            cm.CommandText = "Update Prestamos Set fecha_devolucion='"+ fecha +"' Where ID_Prestamo=" + prestamo;
+            cm.CommandText = "Update Sede Set cobroPeso='" + valor + "' Where Nombre_Pais='" + nombre + "' ";
             conectarServidor();
 
             if (conectarServidor())
@@ -1083,46 +927,46 @@ public int verificar_depa(string nombredepa,int sucur)
 
 
 
-
-
-
-
-    //busqueda por autor
+    //Prestamo cambio en Comision
     [WebMethod]
-    public DataSet busqueda_masvendidos()
+    public bool Update_sesion(string valor,string tipo)
     {
+        bool respuesta = false;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "Update sesion Set usuario='" + valor + "' Set tipo='"+tipo+"'"+" Where ID_sesion='1' ";
+            conectarServidor();
 
-        //IDMask is the Customer ID that the client submits.
-        //Replace single quotation marks with two single quotation marks
-        //so that all single quotation marks in the CustomerID are parsed correctly.
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
 
-        //Modify this connection string to use your SQL Server and log on information.
-        SqlConnection con = new SqlConnection("Data Source=JAVIER;Initial Catalog=Whizz_Hard_Books;Integrated Security=True");
+            }
+            else
+            {
+                respuesta = false;
+            }
 
-        //Open the Customers table to serve as the parent table.
-        SqlDataAdapter daCust = new SqlDataAdapter("SELECT ID_Libro, Nombre,Autor, Existencia, Disponibles, Prestados, Reservados,topprestados FROM Libro ORDER BY topprestados Desc", con);
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
 
-        //Create a client-side DataSet to hold the Customers and Orders tables.
-        DataSet ds = new DataSet();
-
-        //Explicitly open the connection to allow explicit closing.
-        con.Open();
-
-        //Fill the DataSet with the Customers table and the Orders table.
-        daCust.Fill(ds, "Libro");
-
-
-        //Explicitly close the connection - do not wait for garbage collection.
-        con.Close();
-
-
-
-        //Return the DataSet to the client.
-        return ds;
+        return respuesta;
     }
 
-    
-    
+
     
     
     

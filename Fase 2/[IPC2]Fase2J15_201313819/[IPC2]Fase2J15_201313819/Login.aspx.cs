@@ -15,7 +15,7 @@ namespace _IPC2_Fase2J15_201313819
         servicioweb.WebServiceSoapClient service = new servicioweb.WebServiceSoapClient();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["UserName"] = null;
         }
 
         protected void LogIn(object sender, EventArgs e)
@@ -51,11 +51,12 @@ namespace _IPC2_Fase2J15_201313819
             {
                 if (service.usuario_verificar(user, pass) == 1)
                 {
-                 service.Update_sesion( service.id_cliente_sesion(user));
+                 service.Update_sesion( service.id_cliente_sesion(user).ToString());
                     
 
                     MessageBox.Show("Inicio Sesion");
-
+                    Session["UserName"] = user;
+                    Session["Tipo"] = "Cliente";
                     Response.Redirect("~/DefaultCliente");
 
                 }
@@ -79,6 +80,26 @@ namespace _IPC2_Fase2J15_201313819
 
                 }
                 else { MessageBox.Show("Usuario o Password Erroneos"); 
+                }
+
+
+ 
+            }
+            else if (DropDownList1.SelectedItem.ToString() == "Director")
+            {
+                if (service.empleado_verificar(user, pass) == 1)
+                {
+                    Session["UserName"] = service.id_empleado_sesion(user); ;
+                    Session["Tipo"] = "Empleado";
+
+                    MessageBox.Show("Inicio Sesion como " + Session["usuario"]);
+
+                    Response.Redirect("~/DefaultEmpleado");
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o Password Erroneos");
                 }
 
 

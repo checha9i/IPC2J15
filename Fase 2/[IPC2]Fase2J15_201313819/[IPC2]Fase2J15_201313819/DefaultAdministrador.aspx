@@ -1,11 +1,14 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DefaultAdministrador.aspx.cs" Inherits="_IPC2_Fase2J15_201313819._DefaultAdministrador" %>
+﻿<%@ Page Title="Home Page Administrador" Language="C#" MasterPageFile="~/Site4.Master" AutoEventWireup="true" CodeBehind="DefaultAdministrador.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.DefaultAdministrador" %>
+
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
         <h1>ASP.NET</h1>
         <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+        <p><a href="http://www.asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        </p>
     </div>
 
     <div class="row">
@@ -40,3 +43,4 @@
     </div>
 
 </asp:Content>
+

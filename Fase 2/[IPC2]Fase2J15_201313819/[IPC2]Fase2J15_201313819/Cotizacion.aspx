@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Cotizacion" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cotizacion.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.Cotizacion" %>
+﻿<%@ Page Title="Cotizacion" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Cotizacion.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.Cotizacion" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">

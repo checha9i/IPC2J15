@@ -10,6 +10,6 @@
 namespace _IPC2_Fase2J15_201313819 {
     
     
-    public partial class _DefaultAdministrador {
+    public partial class DefaultEmpleado {
     }
 }

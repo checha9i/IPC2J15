@@ -88,10 +88,10 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/noEmpleado", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int noEmpleado();
+        int noEmpleado(string dpi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/noEmpleado", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> noEmpleadoAsync();
+        System.Threading.Tasks.Task<int> noEmpleadoAsync(string dpi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/select_sucursal", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -106,27 +106,6 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/verificar_depa", ReplyAction="*")]
         System.Threading.Tasks.Task<int> verificar_depaAsync(string nombredepa, int sucur);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/top", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int top(string libro);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/top", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> topAsync(string libro);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/prestamos", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int prestamos(string libro);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/prestamos", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> prestamosAsync(string libro);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Reservados", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int Reservados(string libro);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Reservados", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> ReservadosAsync(string libro);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_cliente_sesion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -170,47 +149,33 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/fechahoy", ReplyAction="*")]
         System.Threading.Tasks.Task<string> fechahoyAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_Impuesto", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool Update_Impuesto(string nombre, string valor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_Impuesto", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> Update_ImpuestoAsync(string nombre, string valor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_Comision", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool Update_Comision(string nombre, string valor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_Comision", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> Update_ComisionAsync(string nombre, string valor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_cobropeso", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool Update_cobropeso(string nombre, string valor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_cobropeso", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> Update_cobropesoAsync(string nombre, string valor);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_sesion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        bool Update_sesion(int usuario);
+        bool Update_sesion(string valor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_sesion", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> Update_sesionAsync(int usuario);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_clientes", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        bool Update_clientes(string tabla, int prestamos, string cliente);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_clientes", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> Update_clientesAsync(string tabla, int prestamos, string cliente);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/nprestamo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int nprestamo();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/nprestamo", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> nprestamoAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/select_prestamo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int select_prestamo(string carnet, string libro);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/select_prestamo", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> select_prestamoAsync(string carnet, string libro);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_devolucion", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        bool Update_devolucion(int prestamo, string fecha);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_devolucion", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> Update_devolucionAsync(int prestamo, string fecha);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/busqueda_masvendidos", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet busqueda_masvendidos();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/busqueda_masvendidos", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> busqueda_masvendidosAsync();
+        System.Threading.Tasks.Task<bool> Update_sesionAsync(string valor);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -320,12 +285,12 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
             return base.Channel.empleado_verificarAsync(username, pass);
         }
         
-        public int noEmpleado() {
-            return base.Channel.noEmpleado();
+        public int noEmpleado(string dpi) {
+            return base.Channel.noEmpleado(dpi);
         }
         
-        public System.Threading.Tasks.Task<int> noEmpleadoAsync() {
-            return base.Channel.noEmpleadoAsync();
+        public System.Threading.Tasks.Task<int> noEmpleadoAsync(string dpi) {
+            return base.Channel.noEmpleadoAsync(dpi);
         }
         
         public int select_sucursal(string nombresucur) {
@@ -342,30 +307,6 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         
         public System.Threading.Tasks.Task<int> verificar_depaAsync(string nombredepa, int sucur) {
             return base.Channel.verificar_depaAsync(nombredepa, sucur);
-        }
-        
-        public int top(string libro) {
-            return base.Channel.top(libro);
-        }
-        
-        public System.Threading.Tasks.Task<int> topAsync(string libro) {
-            return base.Channel.topAsync(libro);
-        }
-        
-        public int prestamos(string libro) {
-            return base.Channel.prestamos(libro);
-        }
-        
-        public System.Threading.Tasks.Task<int> prestamosAsync(string libro) {
-            return base.Channel.prestamosAsync(libro);
-        }
-        
-        public int Reservados(string libro) {
-            return base.Channel.Reservados(libro);
-        }
-        
-        public System.Threading.Tasks.Task<int> ReservadosAsync(string libro) {
-            return base.Channel.ReservadosAsync(libro);
         }
         
         public int id_cliente_sesion(string ID_Cliente) {
@@ -416,52 +357,36 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
             return base.Channel.fechahoyAsync();
         }
         
-        public bool Update_sesion(int usuario) {
-            return base.Channel.Update_sesion(usuario);
+        public bool Update_Impuesto(string nombre, string valor) {
+            return base.Channel.Update_Impuesto(nombre, valor);
         }
         
-        public System.Threading.Tasks.Task<bool> Update_sesionAsync(int usuario) {
-            return base.Channel.Update_sesionAsync(usuario);
+        public System.Threading.Tasks.Task<bool> Update_ImpuestoAsync(string nombre, string valor) {
+            return base.Channel.Update_ImpuestoAsync(nombre, valor);
         }
         
-        public bool Update_clientes(string tabla, int prestamos, string cliente) {
-            return base.Channel.Update_clientes(tabla, prestamos, cliente);
+        public bool Update_Comision(string nombre, string valor) {
+            return base.Channel.Update_Comision(nombre, valor);
         }
         
-        public System.Threading.Tasks.Task<bool> Update_clientesAsync(string tabla, int prestamos, string cliente) {
-            return base.Channel.Update_clientesAsync(tabla, prestamos, cliente);
+        public System.Threading.Tasks.Task<bool> Update_ComisionAsync(string nombre, string valor) {
+            return base.Channel.Update_ComisionAsync(nombre, valor);
         }
         
-        public int nprestamo() {
-            return base.Channel.nprestamo();
+        public bool Update_cobropeso(string nombre, string valor) {
+            return base.Channel.Update_cobropeso(nombre, valor);
         }
         
-        public System.Threading.Tasks.Task<int> nprestamoAsync() {
-            return base.Channel.nprestamoAsync();
+        public System.Threading.Tasks.Task<bool> Update_cobropesoAsync(string nombre, string valor) {
+            return base.Channel.Update_cobropesoAsync(nombre, valor);
         }
         
-        public int select_prestamo(string carnet, string libro) {
-            return base.Channel.select_prestamo(carnet, libro);
+        public bool Update_sesion(string valor) {
+            return base.Channel.Update_sesion(valor);
         }
         
-        public System.Threading.Tasks.Task<int> select_prestamoAsync(string carnet, string libro) {
-            return base.Channel.select_prestamoAsync(carnet, libro);
-        }
-        
-        public bool Update_devolucion(int prestamo, string fecha) {
-            return base.Channel.Update_devolucion(prestamo, fecha);
-        }
-        
-        public System.Threading.Tasks.Task<bool> Update_devolucionAsync(int prestamo, string fecha) {
-            return base.Channel.Update_devolucionAsync(prestamo, fecha);
-        }
-        
-        public System.Data.DataSet busqueda_masvendidos() {
-            return base.Channel.busqueda_masvendidos();
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataSet> busqueda_masvendidosAsync() {
-            return base.Channel.busqueda_masvendidosAsync();
+        public System.Threading.Tasks.Task<bool> Update_sesionAsync(string valor) {
+            return base.Channel.Update_sesionAsync(valor);
         }
     }
 }

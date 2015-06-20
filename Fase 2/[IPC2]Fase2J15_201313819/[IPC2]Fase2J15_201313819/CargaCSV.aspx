@@ -1,4 +1,4 @@
-﻿<%@ Page Title="CargaCSV" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CargaCSV.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.CargaCSV" %>
+﻿<%@ Page Title="CargaCSV" Language="C#" MasterPageFile="~/Site4.Master" AutoEventWireup="true" CodeBehind="CargaCSV.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.CargaCSV" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
    

@@ -11,7 +11,10 @@ namespace _IPC2_Fase2J15_201313819
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Tipo"].ToString() != "Administrador")
+            {
+                Response.Redirect("Default");
+            }
         }
     }
 }

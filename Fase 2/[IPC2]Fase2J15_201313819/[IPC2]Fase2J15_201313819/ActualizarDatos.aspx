@@ -15,7 +15,7 @@
             <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
           
             <br />
-            <asp:SqlDataSource ID="Actualizar" runat="server" ConnectionString="Data Source=JAVIER;Initial Catalog=Fase2J15;Integrated Security=True" DeleteCommand="DELETE FROM [Clientes] WHERE [ID_Cliente] = @ID_Cliente" InsertCommand="INSERT INTO [Clientes] ([ID_Cliente], [DPI], [Nombre], [Apellido], [NIT], [Telefono], [Telefono2], [Telefono3], [Direccion], [Tarjeta], [usuario], [contraseña], [Aprobacion]) VALUES (@ID_Cliente, @DPI, @Nombre, @Apellido, @NIT, @Telefono, @Telefono2, @Telefono3, @Direccion, @Tarjeta, @usuario, @contraseña, @Aprobacion)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Clientes] WHERE ([ID_Cliente] = @ID_Cliente)" UpdateCommand="UPDATE [Clientes] SET [DPI] = @DPI, [Nombre] = @Nombre, [Apellido] = @Apellido, [NIT] = @NIT, [Telefono] = @Telefono, [Telefono2] = @Telefono2, [Telefono3] = @Telefono3, [Direccion] = @Direccion, [Tarjeta] = @Tarjeta, [usuario] = @usuario, [contraseña] = @contraseña, [Aprobacion] = @Aprobacion WHERE [ID_Cliente] = @ID_Cliente">
+            <asp:SqlDataSource ID="Actualizar" runat="server" ConnectionString="Data Source=JAVIER;Initial Catalog=Fase2J15;Integrated Security=True" DeleteCommand="DELETE FROM [Clientes] WHERE [ID_Cliente] = @ID_Cliente" InsertCommand="INSERT INTO [Clientes] ([ID_Cliente], [DPI], [Nombre], [Apellido], [NIT], [Telefono], [Direccion], [Tarjeta], [usuario], [contraseña], [Aprobacion]) VALUES (@ID_Cliente, @DPI, @Nombre, @Apellido, @NIT, @Telefono, @Direccion, @Tarjeta, @usuario, @contraseña, @Aprobacion)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Clientes] WHERE ([ID_Cliente] = @ID_Cliente)" UpdateCommand="UPDATE [Clientes] SET [DPI] = @DPI, [Nombre] = @Nombre, [Apellido] = @Apellido, [NIT] = @NIT, [Telefono] = @Telefono, [Direccion] = @Direccion, [Tarjeta] = @Tarjeta, [usuario] = @usuario, [contraseña] = @contraseña, [Aprobacion] = @Aprobacion WHERE [ID_Cliente] = @ID_Cliente">
                 <DeleteParameters>
                     <asp:Parameter Name="ID_Cliente" Type="Int32" />
                 </DeleteParameters>
@@ -26,8 +26,6 @@
                     <asp:Parameter Name="Apellido" Type="String" />
                     <asp:Parameter Name="NIT" Type="Int32" />
                     <asp:Parameter Name="Telefono" Type="Int32" />
-                    <asp:Parameter Name="Telefono2" Type="Int32" />
-                    <asp:Parameter Name="Telefono3" Type="Int32" />
                     <asp:Parameter Name="Direccion" Type="String" />
                     <asp:Parameter Name="Tarjeta" Type="Int32" />
                     <asp:Parameter Name="usuario" Type="String" />
@@ -35,7 +33,7 @@
                     <asp:Parameter Name="Aprobacion" Type="String" />
                 </InsertParameters>
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="Label1" Name="ID_Cliente" PropertyName="Text" Type="Int32" />
+                    <asp:SessionParameter Name="ID_Cliente" SessionField="UserName" Type="Int32" />
                 </SelectParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="DPI" Type="Int32" />
@@ -43,8 +41,6 @@
                     <asp:Parameter Name="Apellido" Type="String" />
                     <asp:Parameter Name="NIT" Type="Int32" />
                     <asp:Parameter Name="Telefono" Type="Int32" />
-                    <asp:Parameter Name="Telefono2" Type="Int32" />
-                    <asp:Parameter Name="Telefono3" Type="Int32" />
                     <asp:Parameter Name="Direccion" Type="String" />
                     <asp:Parameter Name="Tarjeta" Type="Int32" />
                     <asp:Parameter Name="usuario" Type="String" />
@@ -68,18 +64,17 @@
                 <AlternatingRowStyle BackColor="#DCDCDC" />
                 <Columns>
                     <asp:CommandField ShowEditButton="True" />
+                    <asp:BoundField DataField="ID_Cliente" HeaderText="ID_Cliente" SortExpression="ID_Cliente" ReadOnly="True" Visible="False" />
                     <asp:BoundField DataField="DPI" HeaderText="DPI" SortExpression="DPI" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                     <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
                     <asp:BoundField DataField="NIT" HeaderText="NIT" SortExpression="NIT" />
                     <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
-                    <asp:BoundField DataField="Telefono2" HeaderText="Telefono2" SortExpression="Telefono2" />
-                    <asp:BoundField DataField="Telefono3" HeaderText="Telefono3" SortExpression="Telefono3" />
                     <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
                     <asp:BoundField DataField="Tarjeta" HeaderText="Tarjeta" SortExpression="Tarjeta" />
+                    <asp:BoundField DataField="usuario" HeaderText="usuario" SortExpression="usuario" />
 <asp:BoundField DataField="contraseña" HeaderText="contraseña" SortExpression="contraseña"></asp:BoundField>
-                    <asp:BoundField DataField="usuario" HeaderText="usuario" SortExpression="usuario" Visible="False" />
-                    <asp:BoundField DataField="Aprobacion" HeaderText="Aprobacion" SortExpression="Aprobacion" Visible="False" />
+                    <asp:BoundField DataField="Aprobacion" HeaderText="Aprobacion" SortExpression="Aprobacion" />
                 </Columns>
                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                 <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />

@@ -167,7 +167,11 @@
         </s:complexType>
       </s:element>
       <s:element name="noEmpleado">
-        <s:complexType />
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dpi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
       <s:element name="noEmpleadoResponse">
         <s:complexType>
@@ -202,48 +206,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="verificar_depaResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="top">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="libro" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="topResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="topResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="prestamos">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="libro" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="prestamosResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="prestamosResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Reservados">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="libro" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ReservadosResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="ReservadosResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -323,10 +285,55 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Update_Impuesto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_ImpuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Update_ImpuestoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Comision">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_ComisionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Update_ComisionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_cobropeso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_cobropesoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Update_cobropesoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Update_sesion">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="usuario" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -334,79 +341,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="Update_sesionResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Update_clientes">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="tabla" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="prestamos" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Update_clientesResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Update_clientesResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="nprestamo">
-        <s:complexType />
-      </s:element>
-      <s:element name="nprestamoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="nprestamoResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="select_prestamo">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="carnet" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="libro" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="select_prestamoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="select_prestamoResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Update_devolucion">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="prestamo" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Update_devolucionResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Update_devolucionResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="busqueda_masvendidos">
-        <s:complexType />
-      </s:element>
-      <s:element name="busqueda_masvendidosResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="busqueda_masvendidosResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -490,24 +424,6 @@
   <wsdl:message name="verificar_depaSoapOut">
     <wsdl:part name="parameters" element="tns:verificar_depaResponse" />
   </wsdl:message>
-  <wsdl:message name="topSoapIn">
-    <wsdl:part name="parameters" element="tns:top" />
-  </wsdl:message>
-  <wsdl:message name="topSoapOut">
-    <wsdl:part name="parameters" element="tns:topResponse" />
-  </wsdl:message>
-  <wsdl:message name="prestamosSoapIn">
-    <wsdl:part name="parameters" element="tns:prestamos" />
-  </wsdl:message>
-  <wsdl:message name="prestamosSoapOut">
-    <wsdl:part name="parameters" element="tns:prestamosResponse" />
-  </wsdl:message>
-  <wsdl:message name="ReservadosSoapIn">
-    <wsdl:part name="parameters" element="tns:Reservados" />
-  </wsdl:message>
-  <wsdl:message name="ReservadosSoapOut">
-    <wsdl:part name="parameters" element="tns:ReservadosResponse" />
-  </wsdl:message>
   <wsdl:message name="id_cliente_sesionSoapIn">
     <wsdl:part name="parameters" element="tns:id_cliente_sesion" />
   </wsdl:message>
@@ -544,41 +460,29 @@
   <wsdl:message name="fechahoySoapOut">
     <wsdl:part name="parameters" element="tns:fechahoyResponse" />
   </wsdl:message>
+  <wsdl:message name="Update_ImpuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Impuesto" />
+  </wsdl:message>
+  <wsdl:message name="Update_ImpuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_ImpuestoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_ComisionSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Comision" />
+  </wsdl:message>
+  <wsdl:message name="Update_ComisionSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_ComisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_cobropesoSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_cobropeso" />
+  </wsdl:message>
+  <wsdl:message name="Update_cobropesoSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_cobropesoResponse" />
+  </wsdl:message>
   <wsdl:message name="Update_sesionSoapIn">
     <wsdl:part name="parameters" element="tns:Update_sesion" />
   </wsdl:message>
   <wsdl:message name="Update_sesionSoapOut">
     <wsdl:part name="parameters" element="tns:Update_sesionResponse" />
-  </wsdl:message>
-  <wsdl:message name="Update_clientesSoapIn">
-    <wsdl:part name="parameters" element="tns:Update_clientes" />
-  </wsdl:message>
-  <wsdl:message name="Update_clientesSoapOut">
-    <wsdl:part name="parameters" element="tns:Update_clientesResponse" />
-  </wsdl:message>
-  <wsdl:message name="nprestamoSoapIn">
-    <wsdl:part name="parameters" element="tns:nprestamo" />
-  </wsdl:message>
-  <wsdl:message name="nprestamoSoapOut">
-    <wsdl:part name="parameters" element="tns:nprestamoResponse" />
-  </wsdl:message>
-  <wsdl:message name="select_prestamoSoapIn">
-    <wsdl:part name="parameters" element="tns:select_prestamo" />
-  </wsdl:message>
-  <wsdl:message name="select_prestamoSoapOut">
-    <wsdl:part name="parameters" element="tns:select_prestamoResponse" />
-  </wsdl:message>
-  <wsdl:message name="Update_devolucionSoapIn">
-    <wsdl:part name="parameters" element="tns:Update_devolucion" />
-  </wsdl:message>
-  <wsdl:message name="Update_devolucionSoapOut">
-    <wsdl:part name="parameters" element="tns:Update_devolucionResponse" />
-  </wsdl:message>
-  <wsdl:message name="busqueda_masvendidosSoapIn">
-    <wsdl:part name="parameters" element="tns:busqueda_masvendidos" />
-  </wsdl:message>
-  <wsdl:message name="busqueda_masvendidosSoapOut">
-    <wsdl:part name="parameters" element="tns:busqueda_masvendidosResponse" />
   </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="conectarServidor">
@@ -633,18 +537,6 @@
       <wsdl:input message="tns:verificar_depaSoapIn" />
       <wsdl:output message="tns:verificar_depaSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="top">
-      <wsdl:input message="tns:topSoapIn" />
-      <wsdl:output message="tns:topSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="prestamos">
-      <wsdl:input message="tns:prestamosSoapIn" />
-      <wsdl:output message="tns:prestamosSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Reservados">
-      <wsdl:input message="tns:ReservadosSoapIn" />
-      <wsdl:output message="tns:ReservadosSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="id_cliente_sesion">
       <wsdl:input message="tns:id_cliente_sesionSoapIn" />
       <wsdl:output message="tns:id_cliente_sesionSoapOut" />
@@ -669,29 +561,21 @@
       <wsdl:input message="tns:fechahoySoapIn" />
       <wsdl:output message="tns:fechahoySoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Update_Impuesto">
+      <wsdl:input message="tns:Update_ImpuestoSoapIn" />
+      <wsdl:output message="tns:Update_ImpuestoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Comision">
+      <wsdl:input message="tns:Update_ComisionSoapIn" />
+      <wsdl:output message="tns:Update_ComisionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_cobropeso">
+      <wsdl:input message="tns:Update_cobropesoSoapIn" />
+      <wsdl:output message="tns:Update_cobropesoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Update_sesion">
       <wsdl:input message="tns:Update_sesionSoapIn" />
       <wsdl:output message="tns:Update_sesionSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Update_clientes">
-      <wsdl:input message="tns:Update_clientesSoapIn" />
-      <wsdl:output message="tns:Update_clientesSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="nprestamo">
-      <wsdl:input message="tns:nprestamoSoapIn" />
-      <wsdl:output message="tns:nprestamoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="select_prestamo">
-      <wsdl:input message="tns:select_prestamoSoapIn" />
-      <wsdl:output message="tns:select_prestamoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Update_devolucion">
-      <wsdl:input message="tns:Update_devolucionSoapIn" />
-      <wsdl:output message="tns:Update_devolucionSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="busqueda_masvendidos">
-      <wsdl:input message="tns:busqueda_masvendidosSoapIn" />
-      <wsdl:output message="tns:busqueda_masvendidosSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -813,33 +697,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="top">
-      <soap:operation soapAction="http://Quetzal_Express.org/top" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="prestamos">
-      <soap:operation soapAction="http://Quetzal_Express.org/prestamos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Reservados">
-      <soap:operation soapAction="http://Quetzal_Express.org/Reservados" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="id_cliente_sesion">
       <soap:operation soapAction="http://Quetzal_Express.org/id_cliente_sesion" style="document" />
       <wsdl:input>
@@ -894,53 +751,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Update_Impuesto">
+      <soap:operation soapAction="http://Quetzal_Express.org/Update_Impuesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Comision">
+      <soap:operation soapAction="http://Quetzal_Express.org/Update_Comision" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_cobropeso">
+      <soap:operation soapAction="http://Quetzal_Express.org/Update_cobropeso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Update_sesion">
       <soap:operation soapAction="http://Quetzal_Express.org/Update_sesion" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Update_clientes">
-      <soap:operation soapAction="http://Quetzal_Express.org/Update_clientes" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="nprestamo">
-      <soap:operation soapAction="http://Quetzal_Express.org/nprestamo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="select_prestamo">
-      <soap:operation soapAction="http://Quetzal_Express.org/select_prestamo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Update_devolucion">
-      <soap:operation soapAction="http://Quetzal_Express.org/Update_devolucion" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="busqueda_masvendidos">
-      <soap:operation soapAction="http://Quetzal_Express.org/busqueda_masvendidos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1068,33 +907,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="top">
-      <soap12:operation soapAction="http://Quetzal_Express.org/top" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="prestamos">
-      <soap12:operation soapAction="http://Quetzal_Express.org/prestamos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Reservados">
-      <soap12:operation soapAction="http://Quetzal_Express.org/Reservados" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="id_cliente_sesion">
       <soap12:operation soapAction="http://Quetzal_Express.org/id_cliente_sesion" style="document" />
       <wsdl:input>
@@ -1149,53 +961,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Update_Impuesto">
+      <soap12:operation soapAction="http://Quetzal_Express.org/Update_Impuesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Comision">
+      <soap12:operation soapAction="http://Quetzal_Express.org/Update_Comision" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_cobropeso">
+      <soap12:operation soapAction="http://Quetzal_Express.org/Update_cobropeso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Update_sesion">
       <soap12:operation soapAction="http://Quetzal_Express.org/Update_sesion" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Update_clientes">
-      <soap12:operation soapAction="http://Quetzal_Express.org/Update_clientes" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="nprestamo">
-      <soap12:operation soapAction="http://Quetzal_Express.org/nprestamo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="select_prestamo">
-      <soap12:operation soapAction="http://Quetzal_Express.org/select_prestamo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Update_devolucion">
-      <soap12:operation soapAction="http://Quetzal_Express.org/Update_devolucion" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="busqueda_masvendidos">
-      <soap12:operation soapAction="http://Quetzal_Express.org/busqueda_masvendidos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

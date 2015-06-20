@@ -7,12 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace _IPC2_Fase2J15_201313819
 {
-    public partial class _DefaultAdministrador : Page
+    public partial class _Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["UserName"]="";
-            Session["Tipo"]="";
+
 
         }
     }

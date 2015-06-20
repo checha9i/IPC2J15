@@ -32,7 +32,7 @@
 
             *</td>
                     <td>
-                        <asp:TextBox ID="apellid" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="apellid" runat="server" Height="20px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -96,7 +96,7 @@
 
                         Nombre de la sucursal</td>
                     <td>
-            <asp:TextBox ID="nombresucu" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
                     </td>
                     <td>&nbsp;</td>

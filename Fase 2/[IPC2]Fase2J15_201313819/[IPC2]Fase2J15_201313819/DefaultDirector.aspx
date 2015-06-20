@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page Empleado" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="DefaultEmpleado.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.DefaultEmpleado" %>
+﻿<%@ Page Title="Home Page Director" Language="C#" MasterPageFile="~/Site3.Master" AutoEventWireup="true" CodeBehind="DefaultDirector.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.DefaultDirector" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
