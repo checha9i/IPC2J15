@@ -3,6 +3,9 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
+              <p>La empresa “Quetzal Express” es líder, que presta servicios de POBOX y envíos, para que
+negocios internacionales, como e-commerce, sean accesibles para los usuarios en Guatemala.</p>
+        
          <!-- Carousel
 ================================================== -->
 <div id="myCarousel" class="carousel slide">
@@ -17,9 +20,7 @@
       <img src="/Resources/images.jpg" style="width:100%" class="img-responsive">
       <div class="container">
         <div class="carousel-caption">
-        <p>La empresa “Quetzal Express” es líder, que presta servicios de POBOX y envíos, para que
-negocios internacionales, como e-commerce, sean accesibles para los usuarios en Guatemala.</p>
-        
+  
        
     
         </div>

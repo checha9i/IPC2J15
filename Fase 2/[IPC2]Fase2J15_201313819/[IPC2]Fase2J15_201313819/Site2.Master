@@ -54,9 +54,9 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/Cotizacion">Cotizar Producto</a></li>
-                        <li><a runat="server" href="~/About">Acerca de</a></li>
-                        <li><a runat="server" href="~/Contact">Contacto</a></li>
+                        <li><a runat="server" href="~/Cotizacion">Gestion De Paquetes</a></li>
+                        <li><a runat="server" href="~/About">Gestion de Bodegas</a></li>
+                        <li><a runat="server" href="~/Contact">Gestion de Servicio al Cliente</a></li>
                        
                     </ul>
            
@@ -65,7 +65,7 @@
                          
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Cuenta<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="ActualizarDatos">Actualizar Datos</a></li>
+            <li><a href="ActualizarEmpleado">Actualizar Datos</a></li>
           
             <li class="divider"></li>
              <li><a runat="server" href="~/Default">Cerrar Sesion</a></li>
