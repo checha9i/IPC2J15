@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Registro de Empleados" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegistroEmpleado.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.RegistroEmpleado" %>
+﻿<%@ Page Title="Registro de Empleados" Language="C#" MasterPageFile="~/Site3.Master" AutoEventWireup="true" CodeBehind="RegistroEmpleado.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.RegistroEmpleado" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
@@ -49,29 +49,6 @@
                 <tr>
                     <td>
 
-            <asp:Label ID="Label4" runat="server" Text="Contraseña"></asp:Label>
-
-            *</td>
-                    <td>
-                        <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>
-
-            <asp:Label ID="Label5" runat="server" Text="Confirme Contraseña"></asp:Label>
-
-            *</td>
-                    <td>
-            <asp:TextBox ID="confirmarcontra" runat="server" TextMode="Password"></asp:TextBox>
-
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>
-
             <asp:Label ID="Label6" runat="server" Text="DPI"></asp:Label>
 
             *</td>
@@ -96,7 +73,9 @@
 
                         Nombre de la sucursal</td>
                     <td>
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="nombresucursal" DataTextField="Nombre_Sucursal" DataValueField="Nombre_Sucursal">
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="nombresucursal" runat="server" ConnectionString="Data Source=JAVIER;Initial Catalog=Fase2J15;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Nombre_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
 
                     </td>
                     <td>&nbsp;</td>
@@ -141,7 +120,7 @@
                         <asp:DropDownList ID="DropDownList1" runat="server">
                             <asp:ListItem>Seleccione Rol </asp:ListItem>
                             <asp:ListItem>Empleado</asp:ListItem>
-                            <asp:ListItem>Administrador</asp:ListItem>
+                            <asp:ListItem>Director</asp:ListItem>
                         </asp:DropDownList>
 
                     </td>

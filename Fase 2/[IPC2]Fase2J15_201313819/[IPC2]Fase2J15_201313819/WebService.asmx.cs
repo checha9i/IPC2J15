@@ -645,6 +645,84 @@ public int verificar_depa(string nombredepa,int sucur)
     }
 
     [WebMethod]
+    public int id_administrador(string user,string password)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT COUNT(*) FROM Administrador WHERE ID_Administrador='" + user +"' and contraseña='"+ password+"'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+    [WebMethod]
+    public int id_director(string user, string password)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT COUNT(*) FROM Empleado WHERE ID_Empleado='" + user + "' and contraseña='" + password + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
+
+
+
+    [WebMethod]
     public int id_tipo()
     {
 
@@ -682,6 +760,44 @@ public int verificar_depa(string nombredepa,int sucur)
         return cant;
     }
 
+
+    [WebMethod]
+    public int departamentodirector(string id_session)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT ID_Depa FROM Empleado WHERE ID_Empleado='" + id_session + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
 
 
 
@@ -927,44 +1043,44 @@ public int verificar_depa(string nombredepa,int sucur)
 
 
 
-    //Prestamo cambio en Comision
-    [WebMethod]
-    public bool Update_sesion(string valor,string tipo)
-    {
-        bool respuesta = false;
-        try
-        {
-            SqlCommand cm = new SqlCommand();
-            cm.Connection = conexion;
-            cm.CommandText = "Update sesion Set usuario='" + valor + "' Set tipo='"+tipo+"'"+" Where ID_sesion='1' ";
-            conectarServidor();
+    ////Prestamo cambio en Comision
+    //[WebMethod]
+    //public bool(string valor,string tipo)
+    //{
+    //    bool respuesta = false;
+    //    try
+    //    {
+    //        SqlCommand cm = new SqlCommand();
+    //        cm.Connection = conexion;
+    //        cm.CommandText = "Update sesion Set usuario='" + valor + "' Set tipo='"+tipo+"'"+" Where ID_sesion='1' ";
+    //        conectarServidor();
 
-            if (conectarServidor())
-            {
-                if (cm.ExecuteNonQuery() == 1)
-                    respuesta = true;
-                else
-                    respuesta = false;
+    //        if (conectarServidor())
+    //        {
+    //            if (cm.ExecuteNonQuery() == 1)
+    //                respuesta = true;
+    //            else
+    //                respuesta = false;
 
-            }
-            else
-            {
-                respuesta = false;
-            }
+    //        }
+    //        else
+    //        {
+    //            respuesta = false;
+    //        }
 
-        }
-        catch (Exception e)
-        {
-            respuesta = false;
-            MostrarError = "Erro: " + e.Message.ToString();
-        }
-        finally
-        {
-            conexion.Close();
-        }
+    //    }
+    //    catch (Exception e)
+    //    {
+    //        respuesta = false;
+    //        MostrarError = "Erro: " + e.Message.ToString();
+    //    }
+    //    finally
+    //    {
+    //        conexion.Close();
+    //    }
 
-        return respuesta;
-    }
+    //    return respuesta;
+    //}
 
 
     

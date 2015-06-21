@@ -237,6 +237,60 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="id_administrador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="id_administradorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_administradorResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="id_director">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="id_directorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_directorResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="id_tipo">
+        <s:complexType />
+      </s:element>
+      <s:element name="id_tipoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_tipoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="departamentodirector">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_session" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="departamentodirectorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="departamentodirectorResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="id_sesion">
         <s:complexType />
       </s:element>
@@ -327,20 +381,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="Update_cobropesoResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Update_sesion">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Update_sesionResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Update_sesionResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -436,6 +476,30 @@
   <wsdl:message name="id_empleado_sesionSoapOut">
     <wsdl:part name="parameters" element="tns:id_empleado_sesionResponse" />
   </wsdl:message>
+  <wsdl:message name="id_administradorSoapIn">
+    <wsdl:part name="parameters" element="tns:id_administrador" />
+  </wsdl:message>
+  <wsdl:message name="id_administradorSoapOut">
+    <wsdl:part name="parameters" element="tns:id_administradorResponse" />
+  </wsdl:message>
+  <wsdl:message name="id_directorSoapIn">
+    <wsdl:part name="parameters" element="tns:id_director" />
+  </wsdl:message>
+  <wsdl:message name="id_directorSoapOut">
+    <wsdl:part name="parameters" element="tns:id_directorResponse" />
+  </wsdl:message>
+  <wsdl:message name="id_tipoSoapIn">
+    <wsdl:part name="parameters" element="tns:id_tipo" />
+  </wsdl:message>
+  <wsdl:message name="id_tipoSoapOut">
+    <wsdl:part name="parameters" element="tns:id_tipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="departamentodirectorSoapIn">
+    <wsdl:part name="parameters" element="tns:departamentodirector" />
+  </wsdl:message>
+  <wsdl:message name="departamentodirectorSoapOut">
+    <wsdl:part name="parameters" element="tns:departamentodirectorResponse" />
+  </wsdl:message>
   <wsdl:message name="id_sesionSoapIn">
     <wsdl:part name="parameters" element="tns:id_sesion" />
   </wsdl:message>
@@ -477,12 +541,6 @@
   </wsdl:message>
   <wsdl:message name="Update_cobropesoSoapOut">
     <wsdl:part name="parameters" element="tns:Update_cobropesoResponse" />
-  </wsdl:message>
-  <wsdl:message name="Update_sesionSoapIn">
-    <wsdl:part name="parameters" element="tns:Update_sesion" />
-  </wsdl:message>
-  <wsdl:message name="Update_sesionSoapOut">
-    <wsdl:part name="parameters" element="tns:Update_sesionResponse" />
   </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="conectarServidor">
@@ -545,6 +603,22 @@
       <wsdl:input message="tns:id_empleado_sesionSoapIn" />
       <wsdl:output message="tns:id_empleado_sesionSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="id_administrador">
+      <wsdl:input message="tns:id_administradorSoapIn" />
+      <wsdl:output message="tns:id_administradorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="id_director">
+      <wsdl:input message="tns:id_directorSoapIn" />
+      <wsdl:output message="tns:id_directorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="id_tipo">
+      <wsdl:input message="tns:id_tipoSoapIn" />
+      <wsdl:output message="tns:id_tipoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="departamentodirector">
+      <wsdl:input message="tns:departamentodirectorSoapIn" />
+      <wsdl:output message="tns:departamentodirectorSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="id_sesion">
       <wsdl:input message="tns:id_sesionSoapIn" />
       <wsdl:output message="tns:id_sesionSoapOut" />
@@ -572,10 +646,6 @@
     <wsdl:operation name="Update_cobropeso">
       <wsdl:input message="tns:Update_cobropesoSoapIn" />
       <wsdl:output message="tns:Update_cobropesoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Update_sesion">
-      <wsdl:input message="tns:Update_sesionSoapIn" />
-      <wsdl:output message="tns:Update_sesionSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -715,6 +785,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="id_administrador">
+      <soap:operation soapAction="http://Quetzal_Express.org/id_administrador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="id_director">
+      <soap:operation soapAction="http://Quetzal_Express.org/id_director" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="id_tipo">
+      <soap:operation soapAction="http://Quetzal_Express.org/id_tipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="departamentodirector">
+      <soap:operation soapAction="http://Quetzal_Express.org/departamentodirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="id_sesion">
       <soap:operation soapAction="http://Quetzal_Express.org/id_sesion" style="document" />
       <wsdl:input>
@@ -771,15 +877,6 @@
     </wsdl:operation>
     <wsdl:operation name="Update_cobropeso">
       <soap:operation soapAction="http://Quetzal_Express.org/Update_cobropeso" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Update_sesion">
-      <soap:operation soapAction="http://Quetzal_Express.org/Update_sesion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -925,6 +1022,42 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="id_administrador">
+      <soap12:operation soapAction="http://Quetzal_Express.org/id_administrador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="id_director">
+      <soap12:operation soapAction="http://Quetzal_Express.org/id_director" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="id_tipo">
+      <soap12:operation soapAction="http://Quetzal_Express.org/id_tipo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="departamentodirector">
+      <soap12:operation soapAction="http://Quetzal_Express.org/departamentodirector" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="id_sesion">
       <soap12:operation soapAction="http://Quetzal_Express.org/id_sesion" style="document" />
       <wsdl:input>
@@ -981,15 +1114,6 @@
     </wsdl:operation>
     <wsdl:operation name="Update_cobropeso">
       <soap12:operation soapAction="http://Quetzal_Express.org/Update_cobropeso" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Update_sesion">
-      <soap12:operation soapAction="http://Quetzal_Express.org/Update_sesion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

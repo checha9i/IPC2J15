@@ -121,6 +121,34 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_empleado_sesion", ReplyAction="*")]
         System.Threading.Tasks.Task<int> id_empleado_sesionAsync(string ID_Empleado);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_administrador", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int id_administrador(string user, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_administrador", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> id_administradorAsync(string user, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_director", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int id_director(string user, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_director", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> id_directorAsync(string user, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_tipo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int id_tipo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_tipo", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> id_tipoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/departamentodirector", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int departamentodirector(string id_session);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/departamentodirector", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> departamentodirectorAsync(string id_session);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_sesion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int id_sesion();
@@ -169,13 +197,6 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_cobropeso", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> Update_cobropesoAsync(string nombre, string valor);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_sesion", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        bool Update_sesion(string valor);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_sesion", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> Update_sesionAsync(string valor);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -325,6 +346,38 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
             return base.Channel.id_empleado_sesionAsync(ID_Empleado);
         }
         
+        public int id_administrador(string user, string password) {
+            return base.Channel.id_administrador(user, password);
+        }
+        
+        public System.Threading.Tasks.Task<int> id_administradorAsync(string user, string password) {
+            return base.Channel.id_administradorAsync(user, password);
+        }
+        
+        public int id_director(string user, string password) {
+            return base.Channel.id_director(user, password);
+        }
+        
+        public System.Threading.Tasks.Task<int> id_directorAsync(string user, string password) {
+            return base.Channel.id_directorAsync(user, password);
+        }
+        
+        public int id_tipo() {
+            return base.Channel.id_tipo();
+        }
+        
+        public System.Threading.Tasks.Task<int> id_tipoAsync() {
+            return base.Channel.id_tipoAsync();
+        }
+        
+        public int departamentodirector(string id_session) {
+            return base.Channel.departamentodirector(id_session);
+        }
+        
+        public System.Threading.Tasks.Task<int> departamentodirectorAsync(string id_session) {
+            return base.Channel.departamentodirectorAsync(id_session);
+        }
+        
         public int id_sesion() {
             return base.Channel.id_sesion();
         }
@@ -379,14 +432,6 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         
         public System.Threading.Tasks.Task<bool> Update_cobropesoAsync(string nombre, string valor) {
             return base.Channel.Update_cobropesoAsync(nombre, valor);
-        }
-        
-        public bool Update_sesion(string valor) {
-            return base.Channel.Update_sesion(valor);
-        }
-        
-        public System.Threading.Tasks.Task<bool> Update_sesionAsync(string valor) {
-            return base.Channel.Update_sesionAsync(valor);
         }
     }
 }

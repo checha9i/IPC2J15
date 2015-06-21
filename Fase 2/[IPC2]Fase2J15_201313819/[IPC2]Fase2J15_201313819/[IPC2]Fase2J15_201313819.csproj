@@ -172,7 +172,9 @@
     <Content Include="DefaultDirector.aspx" />
     <Content Include="DefaultEmpleado.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Gestion de Paquetes.aspx" />
     <Content Include="GestionCobro.aspx" />
+    <Content Include="GestionEmpleados.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -378,12 +380,26 @@
     <Compile Include="DefaultEmpleado.aspx.designer.cs">
       <DependentUpon>DefaultEmpleado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Gestion de Paquetes.aspx.cs">
+      <DependentUpon>Gestion de Paquetes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion de Paquetes.aspx.designer.cs">
+      <DependentUpon>Gestion de Paquetes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionCobro.aspx.cs">
       <DependentUpon>GestionCobro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GestionCobro.aspx.designer.cs">
       <DependentUpon>GestionCobro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEmpleados.aspx.cs">
+      <DependentUpon>GestionEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionEmpleados.aspx.designer.cs">
+      <DependentUpon>GestionEmpleados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

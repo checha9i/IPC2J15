@@ -53,11 +53,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
+                        <li><a runat="server" href="~/DefaultAdministrador">Inicio</a></li>
                         <li><a runat="server" href="~/CargaCSV">Carga CSV</a></li>
                         <li><a runat="server" href="~/GestionCobro">Gestión de Cobros</a></li>
-
-                       
                     </ul>
            
                               <ul class="nav navbar-nav navbar-right">

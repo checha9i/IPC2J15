@@ -51,7 +51,7 @@ namespace _IPC2_Fase2J15_201313819
             {
                 if (service.usuario_verificar(user, pass) == 1)
                 {
-                 service.Update_sesion( service.id_cliente_sesion(user).ToString());
+
                     
 
                     MessageBox.Show("Inicio Sesion");
@@ -74,7 +74,7 @@ namespace _IPC2_Fase2J15_201313819
                     Session["UserName"] = service.id_empleado_sesion(user); ;
                     Session["Tipo"] = "Empleado";
 
-                    MessageBox.Show("Inicio Sesion como "+Session["usuario"]);
+                    MessageBox.Show("Inicio Sesion como "+Session["UserName"]);
 
                     Response.Redirect("~/DefaultEmpleado");
 
@@ -85,16 +85,35 @@ namespace _IPC2_Fase2J15_201313819
 
  
             }
+            else if (DropDownList1.SelectedItem.ToString() == "Administrador")
+            {
+                if (service.id_administrador(user, pass) == 1)
+                {
+                    Session["UserName"] = user; 
+                    Session["Tipo"] = "Administrador";
+
+                    MessageBox.Show("Inicio Sesion como " + Session["UserName"]);
+
+                    Response.Redirect("~/DefaultAdministrador");
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o Password Erroneos");
+                }
+
+
+            }
             else if (DropDownList1.SelectedItem.ToString() == "Director")
             {
-                if (service.empleado_verificar(user, pass) == 1)
+                if (service.id_director(user, pass) == 1)
                 {
-                    Session["UserName"] = service.id_empleado_sesion(user); ;
-                    Session["Tipo"] = "Empleado";
+                    Session["UserName"] = user;
+                    Session["Tipo"] = "Director";
 
-                    MessageBox.Show("Inicio Sesion como " + Session["usuario"]);
+                    MessageBox.Show("Inicio Sesion como " + Session["UserName"]);
 
-                    Response.Redirect("~/DefaultEmpleado");
+                    Response.Redirect("~/DefaultDirector");
 
                 }
                 else
