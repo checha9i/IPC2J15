@@ -156,6 +156,8 @@
     <Content Include="ActualizarEmpleado.aspx" />
     <Content Include="CargaCSV.aspx" />
     <Content Include="ClienteRegistro.aspx" />
+    <Content Include="Clientes.aspx" />
+    <Content Include="ConsultarPaquete.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Cotizacion.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -285,6 +287,20 @@
     </Compile>
     <Compile Include="ClienteRegistro.aspx.designer.cs">
       <DependentUpon>ClienteRegistro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarPaquete.aspx.cs">
+      <DependentUpon>ConsultarPaquete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultarPaquete.aspx.designer.cs">
+      <DependentUpon>ConsultarPaquete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cotizacion.aspx.cs">
       <DependentUpon>Cotizacion.aspx</DependentUpon>

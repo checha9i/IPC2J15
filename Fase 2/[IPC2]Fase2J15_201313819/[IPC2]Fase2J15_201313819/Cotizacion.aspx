@@ -22,6 +22,16 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
+            <td>
+                Pais</td>
+            <td>
+                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="Pais" DataTextField="Nombre_Pais" DataValueField="Nombre_Pais" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="Pais" runat="server" ConnectionString="Data Source=JAVIER;Initial Catalog=Fase2J15;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Nombre_Pais] FROM [Sede]"></asp:SqlDataSource>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
             <td style="height: 21px">
                 <asp:Label ID="Label4" runat="server" Text="Seleccione Categoria"></asp:Label>
             </td>
@@ -42,9 +52,11 @@
         </tr>
         <tr>
             <td>
-                <asp:SqlDataSource ID="Impuestos" runat="server" ConnectionString="Data Source=JAVIER;Initial Catalog=Fase2J15;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Nombre] FROM [Impuesto] ORDER BY [Nombre]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="Impuestos" runat="server" ConnectionString="Data Source=JAVIER;Initial Catalog=Fase2J15;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Nombre] FROM [Impuesto] ORDER BY [Nombre]" OnSelecting="Impuestos_Selecting"></asp:SqlDataSource>
             </td>
-            <td>&nbsp;</td>
+            <td>
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+            </td>
             <td>&nbsp;</td>
         </tr>
         </table>
