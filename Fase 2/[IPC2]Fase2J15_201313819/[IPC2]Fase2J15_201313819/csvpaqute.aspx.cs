@@ -5,16 +5,21 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Data.SqlClient;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
+using Microsoft.VisualBasic.FileIO;
 
+using System.Configuration;
 namespace _IPC2_Fase2J15_201313819
 {
-    public partial class GestionBodega : System.Web.UI.Page
+    public partial class csvpaqute : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
 
@@ -133,5 +138,36 @@ namespace _IPC2_Fase2J15_201313819
                 Response.Write("Ocurri error debe cargar antes el archivo");
             }
         }
+
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+
+            servicioweb.WebServiceSoapClient servicio = new servicioweb.WebServiceSoapClient();
+
+
+            
+                if (servicio.bulkinsert_paquete(lblOculto.Text))
+                {
+
+                    MessageBox.Show("error");
+                }
+                else
+                {
+
+                    MessageBox.Show("correcto");
+                }
+ 
+            
+            
+            
+
+
+
+
+
+        }
+
+
     }
 }

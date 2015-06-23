@@ -882,7 +882,47 @@ public int verificar_depa(string nombredepa,int sucur)
 
         return respuesta;
     }
-    //csv impuestos
+    //csv paquete
+    [WebMethod]
+    public bool bulkinsert_paquete(string path)
+    {
+        bool respuesta = false;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "BULK INSERT dbo.Paquete FROM '" + path + "' WITH ( FIELDTERMINATOR = ',', ROWTERMINATOR = '\n' )";
+            conectarServidor();
+
+
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+
+        return respuesta;
+    }
+    
+        
+        
+        //csv impuestos
     [WebMethod]
     public bool bulkinsert_impuesto(string path)
     {

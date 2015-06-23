@@ -163,6 +163,13 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/bulkinsert", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> bulkinsertAsync(string path);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/bulkinsert_paquete", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool bulkinsert_paquete(string path);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/bulkinsert_paquete", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> bulkinsert_paqueteAsync(string path);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/bulkinsert_impuesto", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         bool bulkinsert_impuesto(string path);
@@ -392,6 +399,14 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         
         public System.Threading.Tasks.Task<bool> bulkinsertAsync(string path) {
             return base.Channel.bulkinsertAsync(path);
+        }
+        
+        public bool bulkinsert_paquete(string path) {
+            return base.Channel.bulkinsert_paquete(path);
+        }
+        
+        public System.Threading.Tasks.Task<bool> bulkinsert_paqueteAsync(string path) {
+            return base.Channel.bulkinsert_paqueteAsync(path);
         }
         
         public bool bulkinsert_impuesto(string path) {

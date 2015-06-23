@@ -65,7 +65,7 @@
                     <asp:BoundField DataField="Domicilio" HeaderText="Domicilio" SortExpression="Domicilio" />
                     <asp:BoundField DataField="DPI" HeaderText="DPI" SortExpression="DPI" />
                     <asp:BoundField DataField="Correo" HeaderText="Correo" SortExpression="Correo" />
-                    <asp:BoundField DataField="ID_Depa" HeaderText="ID_Depa" SortExpression="ID_Depa" />
+                    <asp:BoundField DataField="ID_Depa" HeaderText="ID_Depa" SortExpression="ID_Depa" Visible="False" />
 <asp:BoundField DataField="contraseña" HeaderText="contraseña" SortExpression="contraseña"></asp:BoundField>
                 </Columns>
                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />

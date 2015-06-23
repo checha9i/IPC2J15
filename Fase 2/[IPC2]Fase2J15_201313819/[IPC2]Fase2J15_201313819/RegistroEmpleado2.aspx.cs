@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace _IPC2_Fase2J15_201313819
 {
-    public partial class RegistroEmpleado : System.Web.UI.Page
+    public partial class RegistroEmpleado2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -51,8 +51,7 @@ namespace _IPC2_Fase2J15_201313819
 
          if (servicio.Registrar(Tabla, CamposClientes, Valores))
          {
-             MessageBox.Show("Cliente Agregado Exitosamente, el usuario para el empleado es:"+servicio.noEmpleado(dpi));
-
+             MessageBox.Show("Cliente Agregado Exitosamente");
              Session["UserName"] = servicio.noEmpleado(dpi) ;
              Session["Tipo"]="Empleado";
              Response.Redirect("~/DefaultEmpleado");

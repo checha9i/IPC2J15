@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Actualizar Administrador" Language="C#" MasterPageFile="~/Site4.Master" AutoEventWireup="true" CodeBehind="ActualizarAdministrador.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.ActualizarAdministrador" %>
-
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
 
 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID_Empleado" DataSourceID="Actualizar" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
                 <AlternatingRowStyle BackColor="#DCDCDC" />
@@ -26,3 +26,5 @@
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#000065" />
             </asp:GridView>
+    
+</asp:Content>
