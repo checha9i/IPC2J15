@@ -7,37 +7,7 @@
             <table style="width: 100%; height: 38px;">
                 <tr>
                     <td style="width: 29px">
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Fase2J15ConnectionString %>" SelectCommand="SELECT * FROM [Clientes]" OldValuesParameterFormatString="original_{0}" DeleteCommand="DELETE FROM [Clientes] WHERE [ID_Cliente] = @original_ID_Cliente" InsertCommand="INSERT INTO [Clientes] ([DPI], [Nombre], [Apellido], [NIT], [Telefono], [Direccion], [Tarjeta], [usuario], [contraseña], [Aprobacion], [Casilla]) VALUES (@DPI, @Nombre, @Apellido, @NIT, @Telefono, @Direccion, @Tarjeta, @usuario, @contraseña, @Aprobacion, @Casilla)" UpdateCommand="UPDATE [Clientes] SET [DPI] = @DPI, [Nombre] = @Nombre, [Apellido] = @Apellido, [NIT] = @NIT, [Telefono] = @Telefono, [Direccion] = @Direccion, [Tarjeta] = @Tarjeta, [usuario] = @usuario, [contraseña] = @contraseña, [Aprobacion] = @Aprobacion, [Casilla] = @Casilla WHERE [ID_Cliente] = @original_ID_Cliente">
-                            <DeleteParameters>
-                                <asp:Parameter Name="original_ID_Cliente" Type="Int32" />
-                            </DeleteParameters>
-                            <InsertParameters>
-                                <asp:Parameter Name="DPI" Type="Int32" />
-                                <asp:Parameter Name="Nombre" Type="String" />
-                                <asp:Parameter Name="Apellido" Type="String" />
-                                <asp:Parameter Name="NIT" Type="Int32" />
-                                <asp:Parameter Name="Telefono" Type="Int32" />
-                                <asp:Parameter Name="Direccion" Type="String" />
-                                <asp:Parameter Name="Tarjeta" Type="Int32" />
-                                <asp:Parameter Name="usuario" Type="String" />
-                                <asp:Parameter Name="contraseña" Type="String" />
-                                <asp:Parameter Name="Aprobacion" Type="Int32" />
-                                <asp:Parameter Name="Casilla" Type="Int32" />
-                            </InsertParameters>
-                            <UpdateParameters>
-                                <asp:Parameter Name="DPI" Type="Int32" />
-                                <asp:Parameter Name="Nombre" Type="String" />
-                                <asp:Parameter Name="Apellido" Type="String" />
-                                <asp:Parameter Name="NIT" Type="Int32" />
-                                <asp:Parameter Name="Telefono" Type="Int32" />
-                                <asp:Parameter Name="Direccion" Type="String" />
-                                <asp:Parameter Name="Tarjeta" Type="Int32" />
-                                <asp:Parameter Name="usuario" Type="String" />
-                                <asp:Parameter Name="contraseña" Type="String" />
-                                <asp:Parameter Name="Aprobacion" Type="Int32" />
-                                <asp:Parameter Name="Casilla" Type="Int32" />
-                                <asp:Parameter Name="original_ID_Cliente" Type="Int32" />
-                            </UpdateParameters>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Fase2J15ConnectionString %>" SelectCommand="SELECT * FROM [Clientes] ORDER BY [Aprobacion]" OldValuesParameterFormatString="original_{0}">
                         </asp:SqlDataSource>
                     </td>
                     <td style="width: 188px">
@@ -141,6 +111,8 @@
                     <td style="width: 207px">&nbsp;</td>
                     <td>
                         <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" style="font-size: small" Text="Facturar" />
+                        <asp:TextBox ID="lbnombre" runat="server" Visible="False"></asp:TextBox>
+                        <asp:TextBox ID="lbfactura" runat="server" Visible="False"></asp:TextBox>
                     </td>
                 </tr>
             </table>
@@ -202,11 +174,11 @@
                         </asp:GridView>
                     </td>
                     <td style="width: 192px"><strong>
-                        <asp:Label ID="Label3" runat="server" style="font-size: medium" Text="Autorizados para Devolución" Visible="False"></asp:Label>
+                        <asp:Label ID="Label3" runat="server" style="font-size: medium" Text="Autorizados para Devolución"></asp:Label>
                         </strong></td>
                     <td>
-                        <asp:Label ID="lbapellido" runat="server" Visible="False"></asp:Label>
-                        <asp:Label ID="lbdireccion" runat="server" Visible="False"></asp:Label>
+                        <asp:TextBox ID="lbdireccion" runat="server" Visible="False"></asp:TextBox>
+                        <asp:TextBox ID="lbapellido" runat="server" Visible="False"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

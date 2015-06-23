@@ -75,7 +75,7 @@
                     <td>
                         <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="nombresucursal" DataTextField="Nombre_Sucursal" DataValueField="Nombre_Sucursal">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="nombresucursal" runat="server" ConnectionString="Data Source=JAVIER;Initial Catalog=Fase2J15;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Nombre_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="nombresucursal" runat="server" ConnectionString="<%$ ConnectionStrings:Fase2J15ConnectionString %>" SelectCommand="SELECT [Nombre_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
 
                     </td>
                     <td>&nbsp;</td>

@@ -51,7 +51,7 @@ namespace _IPC2_Fase2J15_201313819
 
          if (servicio.Registrar(Tabla, CamposClientes, Valores))
          {
-             MessageBox.Show("Cliente Agregado Exitosamente");
+             MessageBox.Show("Cliente Agregado Exitosamente, su nombre de usuario es: "+servicio.noEmpleado(dpi));
              Session["UserName"] = servicio.noEmpleado(dpi) ;
              Session["Tipo"]="Empleado";
              Response.Redirect("~/DefaultEmpleado");

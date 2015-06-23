@@ -112,6 +112,24 @@ namespace _IPC2_Fase2J15_201313819 {
         protected global::System.Web.UI.WebControls.Button Button5;
         
         /// <summary>
+        /// Control lbnombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lbnombre;
+        
+        /// <summary>
+        /// Control lbfactura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lbfactura;
+        
+        /// <summary>
         /// Control gvpaquetes.
         /// </summary>
         /// <remarks>
@@ -139,22 +157,22 @@ namespace _IPC2_Fase2J15_201313819 {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control lbapellido.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbapellido;
-        
-        /// <summary>
         /// Control lbdireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbdireccion;
+        protected global::System.Web.UI.WebControls.TextBox lbdireccion;
+        
+        /// <summary>
+        /// Control lbapellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lbapellido;
         
         /// <summary>
         /// Control SqlDataSource6.

@@ -30,7 +30,7 @@ namespace _IPC2_Fase2J15_201313819
             String Tabla = "Clientes";
 
             String nombre, dpi, direccion, Telefono, Apellido,NIT,contraseña,usern;
-            String CamposClientes = "ID_Cliente, DPI, Nombre, Apellido, NIT, Telefono, Direccion,Tarjeta, usuario,contraseña,Aprobacion";
+            String CamposClientes = "ID_Cliente, DPI, Nombre, Apellido, NIT, Telefono, Direccion,Tarjeta, usuario,contraseña,Aprobacion,Casilla";
 
             //Variables de tabla clientes
             int ID_cliente = servicio.noClinte() + 1;
@@ -43,8 +43,9 @@ namespace _IPC2_Fase2J15_201313819
             usern = UserName.Text;
             NIT = nit.Text;
             contraseña = Password.Text;
-            string ap = "No aprobado";
-
+            string ap = "0";
+            string ca= "0";
+            
             //string a enviar
 
 
@@ -55,7 +56,7 @@ namespace _IPC2_Fase2J15_201313819
             Tipo = DropDownList1.SelectedItem.ToString();
             
             nombrep = nombretarjeta.Text;
-            String Valoresclient = "'" + ID_cliente + "','" + dpi + "','" + nombre + "','" + Apellido + "','" + NIT + "','" + Telefono + "','" + direccion + "','" + tarj1 + "','" + usern + "','" + contraseña + "','" + ap +"'";           
+            String Valoresclient = "'" + ID_cliente + "','" + dpi + "','" + nombre + "','" + Apellido + "','" + NIT + "','" + Telefono + "','" + direccion + "','" + tarj1 + "','" + usern + "','" + contraseña + "','" + ap + "','"+ ca +"'";           
 
             String TablaTarj = "Tarjeta";
             String CamposTarj = "No_Tarjeta,Tipo,Nombre_Propietario";

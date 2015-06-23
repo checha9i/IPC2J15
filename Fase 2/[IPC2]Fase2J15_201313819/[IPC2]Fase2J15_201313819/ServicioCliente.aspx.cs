@@ -52,7 +52,7 @@ namespace _IPC2_Fase2J15_201313819
 
                 NombreUsuario = leer1["usuario"].ToString();
                 //lbusuarios.Text = NombreUsuario;
-                nombre = leer1["Nombre"].ToString();
+                lbnombre.Text = leer1["Nombre"].ToString();
                 lbapellido.Text = leer1["Apellido"].ToString();
                 lbdireccion.Text = leer1["Direccion"].ToString();
 
@@ -125,13 +125,13 @@ namespace _IPC2_Fase2J15_201313819
             pdfDoc.Add(new Paragraph("                                                              "));
             pdfDoc.Add(new Paragraph("                                                              "));
 
-            pdfDoc.Add(new Paragraph("NOMBRE:" + lbusuarios.Text + "   APELLIDO:  " + lbapellido.Text + "    "));
+            pdfDoc.Add(new Paragraph("NOMBRE:" + lbnombre.Text + "   APELLIDO:  " + lbapellido.Text + "    "));
 
 
             pdfDoc.Add(new Paragraph("Dirección:  " + lbdireccion.Text + "                                "));
             pdfDoc.Add(new Paragraph("                                                              "));
 
-            pdfDoc.Add(new Paragraph("  "+nombrepaquete+"         "));
+            pdfDoc.Add(new Paragraph("  "+lbfactura.Text+"         "));
             pdfDoc.Add(new Paragraph("                                                              "));
             pdfDoc.Add(new Paragraph("                                                              "));
             pdfDoc.Add(new Paragraph("                                                              "));
@@ -175,10 +175,11 @@ namespace _IPC2_Fase2J15_201313819
             {
                 Int32 num = Convert.ToInt32(e.CommandArgument);
                 TextBox1.Text = gvpaquetes.Rows[num].Cells[6].Text;
-                nombrepaquete= nombrepaquete+" ID paquete: "+gvpaquetes.Rows[num].Cells[1].Text;
-                nombrepaquete = nombrepaquete + " Peso:" + gvpaquetes.Rows[num].Cells[2].Text;
-                nombrepaquete = nombrepaquete + " Sede:" + gvpaquetes.Rows[num].Cells[3].Text;
-                nombrepaquete = nombrepaquete + " Lote:" + gvpaquetes.Rows[num].Cells[8].Text;
+
+                lbfactura.Text= lbfactura.Text+" ID paquete: "+gvpaquetes.Rows[num].Cells[1].Text;
+                lbfactura.Text = lbfactura.Text + " Peso:" + gvpaquetes.Rows[num].Cells[2].Text;
+                lbfactura.Text = lbfactura.Text + " Sede:" + gvpaquetes.Rows[num].Cells[3].Text;
+                lbfactura.Text = lbfactura.Text + " Lote:" + gvpaquetes.Rows[num].Cells[8].Text;
             }
         }
 
