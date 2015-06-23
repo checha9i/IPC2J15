@@ -54,7 +54,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/DefaultCliente">Inicio</a></li>
-                        <li><a runat="server" href="~/Cotizacion">Informacion Individual Paquete</a></li>
+
+                        <li><a runat="server" href="~/Cotizacion">Cotizar Producto</a></li>
                         <li><a runat="server" href="~/ConsultarPaquete">Consultar Paquete</a></li>
                         <li><a runat="server" href="~/Contact">Contacto</a></li>
                        

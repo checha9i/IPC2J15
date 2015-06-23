@@ -38,6 +38,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -174,7 +183,8 @@
     <Content Include="DefaultDirector.aspx" />
     <Content Include="DefaultEmpleado.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Gestion de Paquetes.aspx" />
+    <Content Include="GestionPaquetes.aspx" />
+    <Content Include="GestionBodega.aspx" />
     <Content Include="GestionCobro.aspx" />
     <Content Include="GestionEmpleados.aspx" />
     <Content Include="Login.aspx" />
@@ -192,6 +202,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="RegistroEmpleado.aspx" />
+    <Content Include="ServicioCliente.aspx" />
     <Content Include="WebService.asmx" />
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -396,12 +407,19 @@
     <Compile Include="DefaultEmpleado.aspx.designer.cs">
       <DependentUpon>DefaultEmpleado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Gestion de Paquetes.aspx.cs">
-      <DependentUpon>Gestion de Paquetes.aspx</DependentUpon>
+    <Compile Include="GestionPaquetes.aspx.cs">
+      <DependentUpon>GestionPaquetes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Gestion de Paquetes.aspx.designer.cs">
-      <DependentUpon>Gestion de Paquetes.aspx</DependentUpon>
+    <Compile Include="GestionPaquetes.aspx.designer.cs">
+      <DependentUpon>GestionPaquetes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionBodega.aspx.cs">
+      <DependentUpon>GestionBodega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionBodega.aspx.designer.cs">
+      <DependentUpon>GestionBodega.aspx</DependentUpon>
     </Compile>
     <Compile Include="GestionCobro.aspx.cs">
       <DependentUpon>GestionCobro.aspx</DependentUpon>
@@ -440,6 +458,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServicioCliente.aspx.cs">
+      <DependentUpon>ServicioCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServicioCliente.aspx.designer.cs">
+      <DependentUpon>ServicioCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

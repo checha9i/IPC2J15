@@ -64,3 +64,6 @@ C:\Users\javier\Documents\GitHub\IPC2J15\Fase 2\[IPC2]Fase2J15_201313819\[IPC2]F
 C:\Users\javier\Documents\GitHub\IPC2J15\Fase 2\[IPC2]Fase2J15_201313819\[IPC2]Fase2J15_201313819\obj\Debug\[IPC2]Fase2J15_201313819.csprojResolveAssemblyReference.cache
 C:\Users\javier\Documents\GitHub\IPC2J15\Fase 2\[IPC2]Fase2J15_201313819\[IPC2]Fase2J15_201313819\obj\Debug\[IPC2]Fase2J15_201313819.dll
 C:\Users\javier\Documents\GitHub\IPC2J15\Fase 2\[IPC2]Fase2J15_201313819\[IPC2]Fase2J15_201313819\obj\Debug\[IPC2]Fase2J15_201313819.pdb
+C:\Users\javier\Documents\GitHub\IPC2J15\Fase 2\[IPC2]Fase2J15_201313819\[IPC2]Fase2J15_201313819\bin\itextsharp.dll
+C:\Users\javier\Documents\GitHub\IPC2J15\Fase 2\[IPC2]Fase2J15_201313819\[IPC2]Fase2J15_201313819\bin\itextsharp.pdfa.dll
+C:\Users\javier\Documents\GitHub\IPC2J15\Fase 2\[IPC2]Fase2J15_201313819\[IPC2]Fase2J15_201313819\bin\itextsharp.xtra.dll

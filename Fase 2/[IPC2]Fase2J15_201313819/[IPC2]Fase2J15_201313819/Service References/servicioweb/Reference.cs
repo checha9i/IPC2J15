@@ -81,10 +81,10 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/empleado_verificar", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int empleado_verificar(string username, string pass);
+        int empleado_verificar(string username, string pass, string rol);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/empleado_verificar", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> empleado_verificarAsync(string username, string pass);
+        System.Threading.Tasks.Task<int> empleado_verificarAsync(string username, string pass, string rol);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/noEmpleado", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -298,12 +298,12 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
             return base.Channel.usuario_verificarAsync(username, pass);
         }
         
-        public int empleado_verificar(string username, string pass) {
-            return base.Channel.empleado_verificar(username, pass);
+        public int empleado_verificar(string username, string pass, string rol) {
+            return base.Channel.empleado_verificar(username, pass, rol);
         }
         
-        public System.Threading.Tasks.Task<int> empleado_verificarAsync(string username, string pass) {
-            return base.Channel.empleado_verificarAsync(username, pass);
+        public System.Threading.Tasks.Task<int> empleado_verificarAsync(string username, string pass, string rol) {
+            return base.Channel.empleado_verificarAsync(username, pass, rol);
         }
         
         public int noEmpleado(string dpi) {

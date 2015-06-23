@@ -13,5 +13,9 @@ namespace _IPC2_Fase2J15_201313819
         {
 
         }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+        }
     }
 }

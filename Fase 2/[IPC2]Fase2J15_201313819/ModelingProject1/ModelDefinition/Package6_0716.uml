@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="8a67aa2c-f5ef-4ef3-9482-c4237b83144e"
+  name="UI"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="d155bca4-e8db-40a7-9770-912cbe0fa0b8"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem.Web.UI"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="28c83fc6-f407-4fb0-9eee-f5a7f8e58c7e"
+        name="ITemplate"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="964f9b2a-7306-4cca-8670-f8a9f50a38ba"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Web.dll&quot; Namespace%3DSystem.Web.UI Type%3DITemplate"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="fe162235-da46-4e0b-891b-a840f3924002"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="20be3a3c-f920-42ca-b1ea-a05217be86c0">
+                <propertyInstance
+                  Id="33966f8f-e737-4a27-ad29-3bf457405fe4"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ffde1419-8ec6-42ca-ae0e-0a85a6168ee3">
+                <propertyInstance
+                  Id="a0903ab5-2a0c-4df0-b3e0-bcd523a0e9d3"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ff1f8e6b-f57a-4dd4-85e5-0cbafb9e7bcd">
+                <propertyInstance
+                  Id="d51231dc-b448-4e42-ab2a-a98f2a6db03b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="313f565a-91c5-49f4-9d48-902531df2d07">
+                <propertyInstance
+                  Id="d42a5c56-0d7b-49c6-b9c3-83dc34540bee"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="63e69113-46f0-48d0-b4a9-88afcf0295d2"
+        name="Page"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="5b9c8aad-5156-4803-9892-61da54c53732"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Web.dll&quot; Namespace%3DSystem.Web.UI Type%3DPage"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="8e171fcf-b155-49a8-8351-32ccf2c2a722"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cef2e168-859c-4d20-99ee-9fbc6aa1492c">
+                <propertyInstance
+                  Id="655586e3-5472-43fd-8534-852e733b5849"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5f512a27-5f84-49c9-9dc8-7605d2eff857">
+                <propertyInstance
+                  Id="87478f94-c233-451d-b33e-3c21968d9d1f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5aaba041-ec37-4e43-9ac2-6d8436966abd">
+                <propertyInstance
+                  Id="0ffaf955-e9e9-4755-a350-3155bc6153b3"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3300eee6-3da2-425c-b5ca-34433cdb2d2b">
+                <propertyInstance
+                  Id="f634e538-eba5-4994-9927-7b7449b63caa"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="44a51f91-3923-4771-898e-5650adc33b0f">
+                <propertyInstance
+                  Id="6f26cbe8-5f0f-46a2-b69b-715524660f9c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="db08c0a7-be56-4c72-bf48-c57ded14f7f4"
+        LastKnownName="WebControls"
+        LastKnownLocation="Package_0946.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -56,6 +56,7 @@ namespace _IPC2_Fase2J15_201313819
 
                     MessageBox.Show("Inicio Sesion");
                     Session["UserName"] = user;
+                    Session["IDcliente"]=service.id_cliente_sesion(user);
                     Session["Tipo"] = "Cliente";
                     Response.Redirect("~/DefaultCliente");
 
@@ -69,7 +70,7 @@ namespace _IPC2_Fase2J15_201313819
             }
             else if(DropDownList1.SelectedItem.ToString() == "Empleado")
             {
-                if (service.empleado_verificar(user, pass) == 1)
+                if (service.empleado_verificar(user, pass,DropDownList1.SelectedItem.ToString()) == 1)
                 {
                     Session["UserName"] = service.id_empleado_sesion(user); ;
                     Session["Tipo"] = "Empleado";

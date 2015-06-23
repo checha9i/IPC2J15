@@ -54,9 +54,10 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/DefaultEmpleado">Inicio</a></li>
-                        <li><a runat="server" href="~/Cotizacion">Gestion De Paquetes</a></li>
-                        <li><a runat="server" href="~/About">Gestion de Bodegas</a></li>
-                        <li><a runat="server" href="~/Contact">Gestion de Servicio al Cliente</a></li>
+                        <li><a runat="server" href="~/GestionPaquetes">Gestion De Paquetes</a></li>
+                        <li><a runat="server" href="~/GestionBodega">Gestion de Bodegas</a></li>
+                        <li><a runat="server" href="~/ServicioCliente">Gestion de Servicio al Cliente</a></li>
+                       
                        
                     </ul>
            

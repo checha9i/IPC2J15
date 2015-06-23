@@ -378,7 +378,7 @@ public int usuario_verificar(string username,string pass)
 
 //Verificar empleado
 [WebMethod]
-public int empleado_verificar(string username, string pass)
+public int empleado_verificar(string username, string pass,string rol)
 {
 
     int cant = 0;
@@ -387,7 +387,7 @@ public int empleado_verificar(string username, string pass)
     {
         SqlCommand cm = new SqlCommand();
         cm.Connection = conexion;
-        cm.CommandText = "SELECT COUNT(*) FROM Empleado where ID_Empleado='" + username + "' and contraseña='" + pass + "'";
+        cm.CommandText = "SELECT COUNT(*) FROM Empleado where ID_Empleado='" + username + "' and contraseña='" + pass + "' and rol='"+rol+"'";
         conectarServidor();
         cant = Convert.ToInt32(cm.ExecuteScalar());
         if (conectarServidor())
