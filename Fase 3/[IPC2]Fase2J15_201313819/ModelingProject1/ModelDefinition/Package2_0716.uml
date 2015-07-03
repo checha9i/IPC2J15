@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="7e58aa48-9e02-4bba-9bfc-3bbfa7315f9f"
+  name="Web"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="14fd34e3-9db6-4fd5-b63b-fabb93f373cb"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem.Web"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="9c3f1754-c1ca-4bdd-8cbc-19451c46717d"
+        LastKnownName="SessionState"
+        LastKnownLocation="Package3_0716.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="85e05e96-981d-49be-9764-dadac94cef94"
+        LastKnownName="Profile"
+        LastKnownLocation="Package5_0716.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="8a67aa2c-f5ef-4ef3-9482-c4237b83144e"
+        LastKnownName="UI"
+        LastKnownLocation="Package6_0716.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="7fb8d36d-7691-499d-bb3b-36428c65b668"
+        LastKnownName="Services"
+        LastKnownLocation="Package1_0948.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
