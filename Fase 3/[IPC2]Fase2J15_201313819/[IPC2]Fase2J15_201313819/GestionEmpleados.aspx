@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site3.Master" AutoEventWireup="true" CodeBehind="GestionEmpleados.aspx.cs" Inherits="_IPC2_Fase2J15_201313819.GestionEmpleados" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.<asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+    <h2><%: Title %>.<asp:TextBox ID="TextBox8" runat="server" Visible="False"></asp:TextBox>
+        <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
     </h2>
     <h3>Your application description page.</h3>
 
@@ -16,8 +17,8 @@
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ID_Empleado" DataSourceID="Consultar" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
-                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
-                        <asp:BoundField DataField="ID_Empleado" HeaderText="ID_Empleado" InsertVisible="False" ReadOnly="True" SortExpression="ID_Empleado" Visible="False" />
+                        <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
+                        <asp:BoundField DataField="ID_Empleado" HeaderText="ID_Empleado" InsertVisible="False" ReadOnly="True" SortExpression="ID_Empleado" />
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                         <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
                         <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
@@ -26,8 +27,11 @@
                         <asp:BoundField DataField="DPI" HeaderText="DPI" SortExpression="DPI" />
                         <asp:BoundField DataField="Correo" HeaderText="Correo" SortExpression="Correo" />
                         <asp:BoundField DataField="ID_Depa" HeaderText="ID_Depa" SortExpression="ID_Depa" Visible="False" />
-                        <asp:BoundField DataField="contraseña" HeaderText="contraseña" SortExpression="contraseña" Visible="False" />
+                        <asp:BoundField DataField="contraseña" HeaderText="contraseña" SortExpression="contraseña" />
                         <asp:BoundField DataField="rol" HeaderText="rol" SortExpression="rol" Visible="False" />
+                        <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
+                        <asp:BoundField DataField="ID_Sede" HeaderText="ID_Sede" SortExpression="ID_Sede" Visible="False" />
+                        <asp:BoundField DataField="ID_Sucursal" HeaderText="ID_Sucursal" SortExpression="ID_Sucursal" Visible="False" />
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -40,38 +44,10 @@
                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="Consultar" runat="server" ConnectionString="Data Source=JAVIER;Initial Catalog=Fase2J15;Integrated Security=True" DeleteCommand="DELETE FROM [Empleado] WHERE [ID_Empleado] = @ID_Empleado" InsertCommand="INSERT INTO [Empleado] ([Nombre], [Apellido], [Telefono], [Sueldo], [Domicilio], [DPI], [Correo], [ID_Depa], [contraseña], [rol]) VALUES (@Nombre, @Apellido, @Telefono, @Sueldo, @Domicilio, @DPI, @Correo, @ID_Depa, @contraseña, @rol)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Empleado] WHERE ([ID_Depa] = @ID_Depa)" UpdateCommand="UPDATE [Empleado] SET [Nombre] = @Nombre, [Apellido] = @Apellido, [Telefono] = @Telefono, [Sueldo] = @Sueldo, [Domicilio] = @Domicilio, [DPI] = @DPI, [Correo] = @Correo, [ID_Depa] = @ID_Depa, [contraseña] = @contraseña, [rol] = @rol WHERE [ID_Empleado] = @ID_Empleado">
-                    <DeleteParameters>
-                        <asp:Parameter Name="ID_Empleado" Type="Int32" />
-                    </DeleteParameters>
-                    <InsertParameters>
-                        <asp:Parameter Name="Nombre" Type="String" />
-                        <asp:Parameter Name="Apellido" Type="String" />
-                        <asp:Parameter Name="Telefono" Type="Int32" />
-                        <asp:Parameter Name="Sueldo" Type="Double" />
-                        <asp:Parameter Name="Domicilio" Type="String" />
-                        <asp:Parameter Name="DPI" Type="Int32" />
-                        <asp:Parameter Name="Correo" Type="String" />
-                        <asp:Parameter Name="ID_Depa" Type="Int32" />
-                        <asp:Parameter Name="contraseña" Type="String" />
-                        <asp:Parameter Name="rol" Type="String" />
-                    </InsertParameters>
+                <asp:SqlDataSource ID="Consultar" runat="server" ConnectionString="<%$ ConnectionStrings:Fase2J15ConnectionString %>" SelectCommand="SELECT * FROM [Empleado] WHERE ([ID_Sede] = @ID_Sede)">
                     <SelectParameters>
-                        <asp:ControlParameter ControlID="Label1" Name="ID_Depa" PropertyName="Text" Type="Int32" />
+                        <asp:ControlParameter ControlID="TextBox8" Name="ID_Sede" PropertyName="Text" Type="Int32" />
                     </SelectParameters>
-                    <UpdateParameters>
-                        <asp:Parameter Name="Nombre" Type="String" />
-                        <asp:Parameter Name="Apellido" Type="String" />
-                        <asp:Parameter Name="Telefono" Type="Int32" />
-                        <asp:Parameter Name="Sueldo" Type="Double" />
-                        <asp:Parameter Name="Domicilio" Type="String" />
-                        <asp:Parameter Name="DPI" Type="Int32" />
-                        <asp:Parameter Name="Correo" Type="String" />
-                        <asp:Parameter Name="ID_Depa" Type="Int32" />
-                        <asp:Parameter Name="contraseña" Type="String" />
-                        <asp:Parameter Name="rol" Type="String" />
-                        <asp:Parameter Name="ID_Empleado" Type="Int32" />
-                    </UpdateParameters>
                 </asp:SqlDataSource>
             </td>
             <td>&nbsp;</td>
@@ -125,7 +101,16 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 471px">&nbsp;</td>
+            <td style="width: 471px">Estado
+                <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 471px">
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Despedir" />
+            </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>

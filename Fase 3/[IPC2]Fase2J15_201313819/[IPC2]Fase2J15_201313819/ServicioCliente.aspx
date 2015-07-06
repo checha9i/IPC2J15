@@ -101,13 +101,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 123px">
+                    <td style="width: 123px; height: 23px;">
                         <asp:TextBox ID="lbusuarios" runat="server" Visible="False"></asp:TextBox>
                     </td>
-                    <td style="width: 207px">
+                    <td style="width: 207px; height: 23px;">
                         <asp:TextBox ID="TextBox1" runat="server" Visible="False"></asp:TextBox>
                     </td>
-                    <td>
+                    <td style="height: 23px">
                         <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:Fase2J15ConnectionString %>" SelectCommand="SELECT * FROM [Paquete] WHERE ([usuario] = @usuario)" DeleteCommand="DELETE FROM [Paquete] WHERE [ID_Paquete] = @ID_Paquete" InsertCommand="INSERT INTO [Paquete] ([Peso_Lb], [Impuesto], [Estado], [Comision], [ValorFinal], [usuario], [lote]) VALUES (@Peso_Lb, @Impuesto, @Estado, @Comision, @ValorFinal, @usuario, @lote)" UpdateCommand="UPDATE [Paquete] SET [Peso_Lb] = @Peso_Lb, [Impuesto] = @Impuesto, [Estado] = @Estado, [Comision] = @Comision, [ValorFinal] = @ValorFinal, [usuario] = @usuario, [lote] = @lote WHERE [ID_Paquete] = @ID_Paquete">
                             <DeleteParameters>
                                 <asp:Parameter Name="ID_Paquete" Type="Int32" />

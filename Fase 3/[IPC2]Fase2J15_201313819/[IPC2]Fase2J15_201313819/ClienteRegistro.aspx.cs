@@ -58,9 +58,6 @@ namespace _IPC2_Fase2J15_201313819
             nombrep = nombretarjeta.Text;
             String Valoresclient = "'" + ID_cliente + "','" + dpi + "','" + nombre + "','" + Apellido + "','" + NIT + "','" + Telefono + "','" + direccion + "','" + tarj1 + "','" + usern + "','" + contraseña + "','" + ap + "','"+ ca +"'";           
 
-            String TablaTarj = "Tarjeta";
-            String CamposTarj = "No_Tarjeta,Tipo,Nombre_Propietario";
-            String Valorestarjeta = "'" + tarj1 + "','" + Tipo + "','" + nombrep + "'";
           
             
             if (servicio.busquetarjetaexiste(tarj1) > 0)
@@ -69,17 +66,17 @@ namespace _IPC2_Fase2J15_201313819
 
                     MessageBox.Show("ya existe ese numero de tarjeta");
             }else if (contraseña==confirmarcontra.Text){ 
-                if (servicio.Registrar(TablaTarj, CamposTarj, Valorestarjeta))
-            {
-                Response.Write("Tarjeta Agregada Exitosamente");
+
          //verifica si tiene o no mas tarjetas
                 if (servicio.Registrar(Tabla, CamposClientes, Valoresclient))
                 {
 
                     Session["UserName"] = usern;
                     Session["Tipo"] = "Cliente";
+                    Session["IDcliente"] = ID_cliente;
                     MessageBox.Show("Cliente Agregado Exitosamente");
                     Response.Redirect("~/DefaultCliente");
+
                  //Session["UserName"]=; 
 
                 }
@@ -90,7 +87,7 @@ namespace _IPC2_Fase2J15_201313819
 
 
                 }
-            }
+            
 
 
 

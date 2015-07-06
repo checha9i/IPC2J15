@@ -74,8 +74,8 @@ namespace _IPC2_Fase2J15_201313819
                 {
                     Session["UserName"] = service.id_empleado_sesion(user); ;
                     Session["Tipo"] = "Empleado";
-
-                    MessageBox.Show("Inicio Sesion como "+Session["UserName"]);
+                    Session["Sede"] = service.id_empleado_sede(user);
+                    MessageBox.Show("Inicio Sesion como "+Session["Tipo"]);
 
                     Response.Redirect("~/DefaultEmpleado");
 
@@ -92,8 +92,8 @@ namespace _IPC2_Fase2J15_201313819
                 {
                     Session["UserName"] = user; 
                     Session["Tipo"] = "Administrador";
-
-                    MessageBox.Show("Inicio Sesion como " + Session["UserName"]);
+                    Session["Sede"] = service.id_admin_sede(user);
+                    MessageBox.Show("Inicio Sesion como " + Session["Tipo"]);
 
                     Response.Redirect("~/DefaultAdministrador");
 

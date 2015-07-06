@@ -55,7 +55,7 @@ namespace _IPC2_Fase2J15_201313819
                 lbnombre.Text = leer1["Nombre"].ToString();
                 lbapellido.Text = leer1["Apellido"].ToString();
                 lbdireccion.Text = leer1["Direccion"].ToString();
-
+                
 
             }
             else
@@ -105,7 +105,7 @@ namespace _IPC2_Fase2J15_201313819
 
         protected void Button5_Click(object sender, EventArgs e)
         {
-
+            servicioweb.WebServiceSoapClient servicio = new servicioweb.WebServiceSoapClient();
             iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(PageSize.A4, 10, 10, 10, 10);
 
             iTextSharp.text.pdf.PdfWriter.GetInstance(pdfDoc, System.Web.HttpContext.Current.Response.OutputStream);
@@ -116,7 +116,7 @@ namespace _IPC2_Fase2J15_201313819
             pdfDoc.Add(new Paragraph("                                                                                                                  FACTURA       No. 001"));
             pdfDoc.Add(new Paragraph("                                                              "));
             pdfDoc.Add(new Paragraph("                                                              "));
-            pdfDoc.Add(new Paragraph("                                                              "));
+            pdfDoc.Add(new Paragraph("                  "+servicio.fechahoy().ToString()+"                                            "));
             pdfDoc.Add(new Paragraph("                 Quetzal Expres                               "));
             pdfDoc.Add(new Paragraph("            10ma calle 20-15 Zona 15"));
             pdfDoc.Add(new Paragraph("              www.QuetzalExpress.com"));

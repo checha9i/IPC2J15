@@ -133,5 +133,38 @@ namespace _IPC2_Fase2J15_201313819
                 Response.Write("Ocurri error debe cargar antes el archivo");
             }
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            servicioweb.WebServiceSoapClient servicio = new servicioweb.WebServiceSoapClient();
+            servicio.cambiodeestadopaquete(TextBox1.Text);
+        }
+
+        protected void GridView3_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Select")
+            {
+                Int32 num = Convert.ToInt32(e.CommandArgument);
+                TextBox1.Text = GridView3.Rows[num].Cells[1].Text;
+
+
+
+            }
+        }
     }
 }

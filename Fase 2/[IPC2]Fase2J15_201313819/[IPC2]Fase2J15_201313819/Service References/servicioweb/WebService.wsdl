@@ -238,6 +238,48 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="id_empleado_sede">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID_Empleado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="id_empleado_sedeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_empleado_sedeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="comision_sede">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="comision_sedeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="comision_sedeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="peso_sede">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="peso_sedeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="peso_sedeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="id_administrador">
         <s:complexType>
           <s:sequence>
@@ -250,6 +292,20 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="id_administradorResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="id_admin_sede">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID_Empleado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="id_admin_sedeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_admin_sedeResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -401,6 +457,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="despedir_empleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="despedir_empleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="despedir_empleadoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Update_cobropeso">
         <s:complexType>
           <s:sequence>
@@ -413,6 +483,120 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="Update_cobropesoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="impuesto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="impuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="impuestoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="idlote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="idloteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idloteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="empleado_sede">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="empleado_sedeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empleado_sedeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FacturaImagen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="link" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FacturaImagenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FacturaImagenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cambiodeestadopaquete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NombrePaquete" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cambiodeestadopaqueteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cambiodeestadopaqueteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cambiodeestadopaquetecliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NombrePaquete" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cambiodeestadopaqueteclienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cambiodeestadopaqueteclienteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cambiodeestadopaquetedirec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NombrePaquete" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cambiodeestadopaquetedirecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cambiodeestadopaquetedirecResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cambiodeestadopaquetedirecno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NombrePaquete" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cambiodeestadopaquetedirecnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cambiodeestadopaquetedirecnoResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -508,11 +692,35 @@
   <wsdl:message name="id_empleado_sesionSoapOut">
     <wsdl:part name="parameters" element="tns:id_empleado_sesionResponse" />
   </wsdl:message>
+  <wsdl:message name="id_empleado_sedeSoapIn">
+    <wsdl:part name="parameters" element="tns:id_empleado_sede" />
+  </wsdl:message>
+  <wsdl:message name="id_empleado_sedeSoapOut">
+    <wsdl:part name="parameters" element="tns:id_empleado_sedeResponse" />
+  </wsdl:message>
+  <wsdl:message name="comision_sedeSoapIn">
+    <wsdl:part name="parameters" element="tns:comision_sede" />
+  </wsdl:message>
+  <wsdl:message name="comision_sedeSoapOut">
+    <wsdl:part name="parameters" element="tns:comision_sedeResponse" />
+  </wsdl:message>
+  <wsdl:message name="peso_sedeSoapIn">
+    <wsdl:part name="parameters" element="tns:peso_sede" />
+  </wsdl:message>
+  <wsdl:message name="peso_sedeSoapOut">
+    <wsdl:part name="parameters" element="tns:peso_sedeResponse" />
+  </wsdl:message>
   <wsdl:message name="id_administradorSoapIn">
     <wsdl:part name="parameters" element="tns:id_administrador" />
   </wsdl:message>
   <wsdl:message name="id_administradorSoapOut">
     <wsdl:part name="parameters" element="tns:id_administradorResponse" />
+  </wsdl:message>
+  <wsdl:message name="id_admin_sedeSoapIn">
+    <wsdl:part name="parameters" element="tns:id_admin_sede" />
+  </wsdl:message>
+  <wsdl:message name="id_admin_sedeSoapOut">
+    <wsdl:part name="parameters" element="tns:id_admin_sedeResponse" />
   </wsdl:message>
   <wsdl:message name="id_directorSoapIn">
     <wsdl:part name="parameters" element="tns:id_director" />
@@ -580,11 +788,65 @@
   <wsdl:message name="Update_datosSoapOut">
     <wsdl:part name="parameters" element="tns:Update_datosResponse" />
   </wsdl:message>
+  <wsdl:message name="despedir_empleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:despedir_empleado" />
+  </wsdl:message>
+  <wsdl:message name="despedir_empleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:despedir_empleadoResponse" />
+  </wsdl:message>
   <wsdl:message name="Update_cobropesoSoapIn">
     <wsdl:part name="parameters" element="tns:Update_cobropeso" />
   </wsdl:message>
   <wsdl:message name="Update_cobropesoSoapOut">
     <wsdl:part name="parameters" element="tns:Update_cobropesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="impuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:impuesto" />
+  </wsdl:message>
+  <wsdl:message name="impuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:impuestoResponse" />
+  </wsdl:message>
+  <wsdl:message name="idloteSoapIn">
+    <wsdl:part name="parameters" element="tns:idlote" />
+  </wsdl:message>
+  <wsdl:message name="idloteSoapOut">
+    <wsdl:part name="parameters" element="tns:idloteResponse" />
+  </wsdl:message>
+  <wsdl:message name="empleado_sedeSoapIn">
+    <wsdl:part name="parameters" element="tns:empleado_sede" />
+  </wsdl:message>
+  <wsdl:message name="empleado_sedeSoapOut">
+    <wsdl:part name="parameters" element="tns:empleado_sedeResponse" />
+  </wsdl:message>
+  <wsdl:message name="FacturaImagenSoapIn">
+    <wsdl:part name="parameters" element="tns:FacturaImagen" />
+  </wsdl:message>
+  <wsdl:message name="FacturaImagenSoapOut">
+    <wsdl:part name="parameters" element="tns:FacturaImagenResponse" />
+  </wsdl:message>
+  <wsdl:message name="cambiodeestadopaqueteSoapIn">
+    <wsdl:part name="parameters" element="tns:cambiodeestadopaquete" />
+  </wsdl:message>
+  <wsdl:message name="cambiodeestadopaqueteSoapOut">
+    <wsdl:part name="parameters" element="tns:cambiodeestadopaqueteResponse" />
+  </wsdl:message>
+  <wsdl:message name="cambiodeestadopaqueteclienteSoapIn">
+    <wsdl:part name="parameters" element="tns:cambiodeestadopaquetecliente" />
+  </wsdl:message>
+  <wsdl:message name="cambiodeestadopaqueteclienteSoapOut">
+    <wsdl:part name="parameters" element="tns:cambiodeestadopaqueteclienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="cambiodeestadopaquetedirecSoapIn">
+    <wsdl:part name="parameters" element="tns:cambiodeestadopaquetedirec" />
+  </wsdl:message>
+  <wsdl:message name="cambiodeestadopaquetedirecSoapOut">
+    <wsdl:part name="parameters" element="tns:cambiodeestadopaquetedirecResponse" />
+  </wsdl:message>
+  <wsdl:message name="cambiodeestadopaquetedirecnoSoapIn">
+    <wsdl:part name="parameters" element="tns:cambiodeestadopaquetedirecno" />
+  </wsdl:message>
+  <wsdl:message name="cambiodeestadopaquetedirecnoSoapOut">
+    <wsdl:part name="parameters" element="tns:cambiodeestadopaquetedirecnoResponse" />
   </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="conectarServidor">
@@ -647,9 +909,25 @@
       <wsdl:input message="tns:id_empleado_sesionSoapIn" />
       <wsdl:output message="tns:id_empleado_sesionSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="id_empleado_sede">
+      <wsdl:input message="tns:id_empleado_sedeSoapIn" />
+      <wsdl:output message="tns:id_empleado_sedeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="comision_sede">
+      <wsdl:input message="tns:comision_sedeSoapIn" />
+      <wsdl:output message="tns:comision_sedeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="peso_sede">
+      <wsdl:input message="tns:peso_sedeSoapIn" />
+      <wsdl:output message="tns:peso_sedeSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="id_administrador">
       <wsdl:input message="tns:id_administradorSoapIn" />
       <wsdl:output message="tns:id_administradorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="id_admin_sede">
+      <wsdl:input message="tns:id_admin_sedeSoapIn" />
+      <wsdl:output message="tns:id_admin_sedeSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="id_director">
       <wsdl:input message="tns:id_directorSoapIn" />
@@ -695,9 +973,45 @@
       <wsdl:input message="tns:Update_datosSoapIn" />
       <wsdl:output message="tns:Update_datosSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="despedir_empleado">
+      <wsdl:input message="tns:despedir_empleadoSoapIn" />
+      <wsdl:output message="tns:despedir_empleadoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Update_cobropeso">
       <wsdl:input message="tns:Update_cobropesoSoapIn" />
       <wsdl:output message="tns:Update_cobropesoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="impuesto">
+      <wsdl:input message="tns:impuestoSoapIn" />
+      <wsdl:output message="tns:impuestoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="idlote">
+      <wsdl:input message="tns:idloteSoapIn" />
+      <wsdl:output message="tns:idloteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="empleado_sede">
+      <wsdl:input message="tns:empleado_sedeSoapIn" />
+      <wsdl:output message="tns:empleado_sedeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FacturaImagen">
+      <wsdl:input message="tns:FacturaImagenSoapIn" />
+      <wsdl:output message="tns:FacturaImagenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquete">
+      <wsdl:input message="tns:cambiodeestadopaqueteSoapIn" />
+      <wsdl:output message="tns:cambiodeestadopaqueteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquetecliente">
+      <wsdl:input message="tns:cambiodeestadopaqueteclienteSoapIn" />
+      <wsdl:output message="tns:cambiodeestadopaqueteclienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquetedirec">
+      <wsdl:input message="tns:cambiodeestadopaquetedirecSoapIn" />
+      <wsdl:output message="tns:cambiodeestadopaquetedirecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquetedirecno">
+      <wsdl:input message="tns:cambiodeestadopaquetedirecnoSoapIn" />
+      <wsdl:output message="tns:cambiodeestadopaquetedirecnoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -837,8 +1151,44 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="id_empleado_sede">
+      <soap:operation soapAction="http://Quetzal_Express.org/id_empleado_sede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="comision_sede">
+      <soap:operation soapAction="http://Quetzal_Express.org/comision_sede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peso_sede">
+      <soap:operation soapAction="http://Quetzal_Express.org/peso_sede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="id_administrador">
       <soap:operation soapAction="http://Quetzal_Express.org/id_administrador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="id_admin_sede">
+      <soap:operation soapAction="http://Quetzal_Express.org/id_admin_sede" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -945,8 +1295,89 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="despedir_empleado">
+      <soap:operation soapAction="http://Quetzal_Express.org/despedir_empleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Update_cobropeso">
       <soap:operation soapAction="http://Quetzal_Express.org/Update_cobropeso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="impuesto">
+      <soap:operation soapAction="http://Quetzal_Express.org/impuesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="idlote">
+      <soap:operation soapAction="http://Quetzal_Express.org/idlote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="empleado_sede">
+      <soap:operation soapAction="http://Quetzal_Express.org/empleado_sede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FacturaImagen">
+      <soap:operation soapAction="http://Quetzal_Express.org/FacturaImagen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquete">
+      <soap:operation soapAction="http://Quetzal_Express.org/cambiodeestadopaquete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquetecliente">
+      <soap:operation soapAction="http://Quetzal_Express.org/cambiodeestadopaquetecliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquetedirec">
+      <soap:operation soapAction="http://Quetzal_Express.org/cambiodeestadopaquetedirec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquetedirecno">
+      <soap:operation soapAction="http://Quetzal_Express.org/cambiodeestadopaquetedirecno" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1092,8 +1523,44 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="id_empleado_sede">
+      <soap12:operation soapAction="http://Quetzal_Express.org/id_empleado_sede" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="comision_sede">
+      <soap12:operation soapAction="http://Quetzal_Express.org/comision_sede" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peso_sede">
+      <soap12:operation soapAction="http://Quetzal_Express.org/peso_sede" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="id_administrador">
       <soap12:operation soapAction="http://Quetzal_Express.org/id_administrador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="id_admin_sede">
+      <soap12:operation soapAction="http://Quetzal_Express.org/id_admin_sede" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1200,8 +1667,89 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="despedir_empleado">
+      <soap12:operation soapAction="http://Quetzal_Express.org/despedir_empleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Update_cobropeso">
       <soap12:operation soapAction="http://Quetzal_Express.org/Update_cobropeso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="impuesto">
+      <soap12:operation soapAction="http://Quetzal_Express.org/impuesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="idlote">
+      <soap12:operation soapAction="http://Quetzal_Express.org/idlote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="empleado_sede">
+      <soap12:operation soapAction="http://Quetzal_Express.org/empleado_sede" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FacturaImagen">
+      <soap12:operation soapAction="http://Quetzal_Express.org/FacturaImagen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquete">
+      <soap12:operation soapAction="http://Quetzal_Express.org/cambiodeestadopaquete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquetecliente">
+      <soap12:operation soapAction="http://Quetzal_Express.org/cambiodeestadopaquetecliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquetedirec">
+      <soap12:operation soapAction="http://Quetzal_Express.org/cambiodeestadopaquetedirec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiodeestadopaquetedirecno">
+      <soap12:operation soapAction="http://Quetzal_Express.org/cambiodeestadopaquetedirecno" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

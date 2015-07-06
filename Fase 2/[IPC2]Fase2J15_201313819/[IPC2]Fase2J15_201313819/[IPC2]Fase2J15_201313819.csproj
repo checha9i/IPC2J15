@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="itextsharp">
       <HintPath>..\itextsharp.dll</HintPath>
     </Reference>
@@ -158,6 +162,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cargafactura.aspx" />
+    <Content Include="MenuReportes.aspx" />
+    <Content Include="Reporte2.aspx" />
+    <Content Include="Reporte3.aspx" />
+    <Content Include="Reporte4.aspx" />
+    <Content Include="Reportes.aspx" />
     <Content Include="prefactura.aspx" />
     <Content Include="About.aspx" />
     <Content Include="ActualizarAdministrador.aspx" />
@@ -197,6 +207,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
     <None Include="Service References\servicioweb\WebService.disco" />
     <None Include="Service References\servicioweb\configuration91.svcinfo" />
     <None Include="Service References\servicioweb\configuration.svcinfo" />
@@ -261,6 +282,83 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cargafactura.aspx.cs">
+      <DependentUpon>cargafactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cargafactura.aspx.designer.cs">
+      <DependentUpon>cargafactura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MenuReportes.aspx.cs">
+      <DependentUpon>MenuReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuReportes.aspx.designer.cs">
+      <DependentUpon>MenuReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte2.aspx.cs">
+      <DependentUpon>Reporte2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte2.aspx.designer.cs">
+      <DependentUpon>Reporte2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte3.aspx.cs">
+      <DependentUpon>Reporte3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte3.aspx.designer.cs">
+      <DependentUpon>Reporte3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte4.aspx.cs">
+      <DependentUpon>Reporte4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte4.aspx.designer.cs">
+      <DependentUpon>Reporte4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="empleadosucursal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>empleadosucursal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="impuestos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>impuestos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="paquetessucursal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>paquetessucursal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="prefactura.aspx.cs">
       <DependentUpon>prefactura.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -486,6 +584,12 @@
     <Compile Include="RegistroEmpleado.aspx.designer.cs">
       <DependentUpon>RegistroEmpleado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reportpaquetes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reportpaquetes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Service References\servicioweb\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -561,6 +665,35 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\servicioweb\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empleadosucursal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>empleadosucursal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="impuestos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>impuestos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paquetessucursal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>paquetessucursal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportpaquetes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reportpaquetes.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

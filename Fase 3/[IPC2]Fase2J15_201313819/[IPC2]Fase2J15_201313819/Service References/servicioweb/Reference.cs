@@ -121,12 +121,40 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_empleado_sesion", ReplyAction="*")]
         System.Threading.Tasks.Task<int> id_empleado_sesionAsync(string ID_Empleado);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_empleado_sede", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int id_empleado_sede(string ID_Empleado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_empleado_sede", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> id_empleado_sedeAsync(string ID_Empleado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/comision_sede", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int comision_sede(string sede);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/comision_sede", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> comision_sedeAsync(string sede);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/peso_sede", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int peso_sede(string sede);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/peso_sede", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> peso_sedeAsync(string sede);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_administrador", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int id_administrador(string user, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_administrador", ReplyAction="*")]
         System.Threading.Tasks.Task<int> id_administradorAsync(string user, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_admin_sede", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int id_admin_sede(string ID_Empleado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_admin_sede", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> id_admin_sedeAsync(string ID_Empleado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/id_director", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -205,12 +233,75 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_datos", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> Update_datosAsync(string id, string tabla, string tipo, string datos);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/despedir_empleado", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool despedir_empleado(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/despedir_empleado", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> despedir_empleadoAsync(string id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_cobropeso", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         bool Update_cobropeso(string nombre, string valor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/Update_cobropeso", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> Update_cobropesoAsync(string nombre, string valor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/impuesto", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int impuesto(string Nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/impuesto", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> impuestoAsync(string Nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/idlote", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int idlote(string Nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/idlote", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> idloteAsync(string Nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/empleado_sede", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int empleado_sede(string Nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/empleado_sede", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> empleado_sedeAsync(string Nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/FacturaImagen", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool FacturaImagen(string UsuarioC, string link, string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/FacturaImagen", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> FacturaImagenAsync(string UsuarioC, string link, string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/cambiodeestadopaquete", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int cambiodeestadopaquete(string NombrePaquete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/cambiodeestadopaquete", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> cambiodeestadopaqueteAsync(string NombrePaquete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/cambiodeestadopaquetecliente", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int cambiodeestadopaquetecliente(string NombrePaquete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/cambiodeestadopaquetecliente", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> cambiodeestadopaqueteclienteAsync(string NombrePaquete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/cambiodeestadopaquetedirec", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int cambiodeestadopaquetedirec(string NombrePaquete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/cambiodeestadopaquetedirec", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> cambiodeestadopaquetedirecAsync(string NombrePaquete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/cambiodeestadopaquetedirecno", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int cambiodeestadopaquetedirecno(string NombrePaquete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Quetzal_Express.org/cambiodeestadopaquetedirecno", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> cambiodeestadopaquetedirecnoAsync(string NombrePaquete);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -360,12 +451,44 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
             return base.Channel.id_empleado_sesionAsync(ID_Empleado);
         }
         
+        public int id_empleado_sede(string ID_Empleado) {
+            return base.Channel.id_empleado_sede(ID_Empleado);
+        }
+        
+        public System.Threading.Tasks.Task<int> id_empleado_sedeAsync(string ID_Empleado) {
+            return base.Channel.id_empleado_sedeAsync(ID_Empleado);
+        }
+        
+        public int comision_sede(string sede) {
+            return base.Channel.comision_sede(sede);
+        }
+        
+        public System.Threading.Tasks.Task<int> comision_sedeAsync(string sede) {
+            return base.Channel.comision_sedeAsync(sede);
+        }
+        
+        public int peso_sede(string sede) {
+            return base.Channel.peso_sede(sede);
+        }
+        
+        public System.Threading.Tasks.Task<int> peso_sedeAsync(string sede) {
+            return base.Channel.peso_sedeAsync(sede);
+        }
+        
         public int id_administrador(string user, string password) {
             return base.Channel.id_administrador(user, password);
         }
         
         public System.Threading.Tasks.Task<int> id_administradorAsync(string user, string password) {
             return base.Channel.id_administradorAsync(user, password);
+        }
+        
+        public int id_admin_sede(string ID_Empleado) {
+            return base.Channel.id_admin_sede(ID_Empleado);
+        }
+        
+        public System.Threading.Tasks.Task<int> id_admin_sedeAsync(string ID_Empleado) {
+            return base.Channel.id_admin_sedeAsync(ID_Empleado);
         }
         
         public int id_director(string user, string password) {
@@ -456,12 +579,84 @@ namespace _IPC2_Fase2J15_201313819.servicioweb {
             return base.Channel.Update_datosAsync(id, tabla, tipo, datos);
         }
         
+        public bool despedir_empleado(string id) {
+            return base.Channel.despedir_empleado(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> despedir_empleadoAsync(string id) {
+            return base.Channel.despedir_empleadoAsync(id);
+        }
+        
         public bool Update_cobropeso(string nombre, string valor) {
             return base.Channel.Update_cobropeso(nombre, valor);
         }
         
         public System.Threading.Tasks.Task<bool> Update_cobropesoAsync(string nombre, string valor) {
             return base.Channel.Update_cobropesoAsync(nombre, valor);
+        }
+        
+        public int impuesto(string Nombre) {
+            return base.Channel.impuesto(Nombre);
+        }
+        
+        public System.Threading.Tasks.Task<int> impuestoAsync(string Nombre) {
+            return base.Channel.impuestoAsync(Nombre);
+        }
+        
+        public int idlote(string Nombre) {
+            return base.Channel.idlote(Nombre);
+        }
+        
+        public System.Threading.Tasks.Task<int> idloteAsync(string Nombre) {
+            return base.Channel.idloteAsync(Nombre);
+        }
+        
+        public int empleado_sede(string Nombre) {
+            return base.Channel.empleado_sede(Nombre);
+        }
+        
+        public System.Threading.Tasks.Task<int> empleado_sedeAsync(string Nombre) {
+            return base.Channel.empleado_sedeAsync(Nombre);
+        }
+        
+        public bool FacturaImagen(string UsuarioC, string link, string id) {
+            return base.Channel.FacturaImagen(UsuarioC, link, id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> FacturaImagenAsync(string UsuarioC, string link, string id) {
+            return base.Channel.FacturaImagenAsync(UsuarioC, link, id);
+        }
+        
+        public int cambiodeestadopaquete(string NombrePaquete) {
+            return base.Channel.cambiodeestadopaquete(NombrePaquete);
+        }
+        
+        public System.Threading.Tasks.Task<int> cambiodeestadopaqueteAsync(string NombrePaquete) {
+            return base.Channel.cambiodeestadopaqueteAsync(NombrePaquete);
+        }
+        
+        public int cambiodeestadopaquetecliente(string NombrePaquete) {
+            return base.Channel.cambiodeestadopaquetecliente(NombrePaquete);
+        }
+        
+        public System.Threading.Tasks.Task<int> cambiodeestadopaqueteclienteAsync(string NombrePaquete) {
+            return base.Channel.cambiodeestadopaqueteclienteAsync(NombrePaquete);
+        }
+        
+        public int cambiodeestadopaquetedirec(string NombrePaquete) {
+            return base.Channel.cambiodeestadopaquetedirec(NombrePaquete);
+        }
+        
+        public System.Threading.Tasks.Task<int> cambiodeestadopaquetedirecAsync(string NombrePaquete) {
+            return base.Channel.cambiodeestadopaquetedirecAsync(NombrePaquete);
+        }
+        
+        public int cambiodeestadopaquetedirecno(string NombrePaquete) {
+            return base.Channel.cambiodeestadopaquetedirecno(NombrePaquete);
+        }
+        
+        public System.Threading.Tasks.Task<int> cambiodeestadopaquetedirecnoAsync(string NombrePaquete) {
+            return base.Channel.cambiodeestadopaquetedirecnoAsync(NombrePaquete);
         }
     }
 }

@@ -16,9 +16,13 @@
               <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
               <asp:BoundField DataField="Comision" HeaderText="Comision" SortExpression="Comision" Visible="False" />
               <asp:BoundField DataField="ValorFinal" HeaderText="ValorFinal" SortExpression="ValorFinal" />
-              <asp:BoundField DataField="usuario" HeaderText="usuario" SortExpression="usuario" />
+              <asp:BoundField DataField="usuario" HeaderText="usuario" SortExpression="usuario" Visible="False" />
               <asp:BoundField DataField="lote" HeaderText="lote" SortExpression="lote" />
               <asp:BoundField DataField="fecha_cambio" HeaderText="fecha_cambio" SortExpression="fecha_cambio" />
+              <asp:BoundField DataField="costo" HeaderText="costo" SortExpression="costo" />
+              <asp:BoundField DataField="empleado" HeaderText="empleado" SortExpression="empleado" />
+              <asp:ImageField DataImageUrlField="factura" DataImageUrlFormatString="~/{0}" HeaderText="Factura">
+              </asp:ImageField>
           </Columns>
           <EditRowStyle BackColor="#999999" />
           <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -44,15 +48,21 @@
       <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ID_Paquete" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None">
           <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
           <Columns>
+              <asp:CommandField ShowSelectButton="True" />
               <asp:BoundField DataField="ID_Paquete" HeaderText="ID_Paquete" InsertVisible="False" ReadOnly="True" SortExpression="ID_Paquete" />
-              <asp:BoundField DataField="Peso_Lb" HeaderText="Peso_Lb" SortExpression="Peso_Lb" />
+              <asp:BoundField DataField="Peso_Lb" HeaderText="Peso_Lb" SortExpression="Peso_Lb" Visible="False" />
               <asp:BoundField DataField="Impuesto" HeaderText="Impuesto" SortExpression="Impuesto" Visible="False" />
               <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
               <asp:BoundField DataField="Comision" HeaderText="Comision" SortExpression="Comision" Visible="False" />
               <asp:BoundField DataField="ValorFinal" HeaderText="ValorFinal" SortExpression="ValorFinal" />
-              <asp:BoundField DataField="usuario" HeaderText="usuario" SortExpression="usuario" Visible="False" />
+              <asp:BoundField DataField="usuario" HeaderText="usuario" SortExpression="usuario" />
               <asp:BoundField DataField="lote" HeaderText="lote" SortExpression="lote" />
               <asp:BoundField DataField="fecha_cambio" HeaderText="fecha_cambio" SortExpression="fecha_cambio" />
+              <asp:BoundField DataField="costo" HeaderText="costo" SortExpression="costo" />
+              <asp:BoundField DataField="empleado" HeaderText="empleado" SortExpression="empleado" />
+              <asp:BoundField DataField="Sucursal_s" HeaderText="Sucursal_s" SortExpression="Sucursal_s" />
+              <asp:ImageField DataImageUrlField="factura" DataImageUrlFormatString="~/{0}" HeaderText="Factura">
+              </asp:ImageField>
           </Columns>
           <EditRowStyle BackColor="#999999" />
           <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -70,6 +80,15 @@
               <asp:ControlParameter ControlID="TextBox1" Name="ID_Paquete" PropertyName="Text" Type="Int32" />
           </SelectParameters>
       </asp:SqlDataSource>
+
+
+        <asp:FileUpload ID="FileUpload1" runat="server" />
+        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBox2" runat="server" Visible="False"></asp:TextBox>
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Guardar" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Subir" />
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>
 
 
   </p>

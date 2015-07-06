@@ -309,7 +309,7 @@ public int busquetarjetaexiste(string notarjeta)
     {
         SqlCommand cm = new SqlCommand();
         cm.Connection = conexion;
-        cm.CommandText = "SELECT COUNT(No_Tarjeta) FROM Tarjeta where No_Tarjeta="+notarjeta;
+        cm.CommandText = "SELECT COUNT(Tarjeta) FROM Clientes where Tarjeta="+notarjeta;
         conectarServidor();
         cant = Convert.ToInt32(cm.ExecuteScalar());
         if (conectarServidor())
@@ -387,7 +387,7 @@ public int empleado_verificar(string username, string pass,string rol)
     {
         SqlCommand cm = new SqlCommand();
         cm.Connection = conexion;
-        cm.CommandText = "SELECT COUNT(*) FROM Empleado where ID_Empleado='" + username + "' and contraseña='" + pass + "' and rol='"+rol+"'";
+        cm.CommandText = "SELECT COUNT(*) FROM Empleado where ID_Empleado='" + username + "' and contraseña='" + pass + "' and rol='"+rol+"' and Estado='Activo'";
         conectarServidor();
         cant = Convert.ToInt32(cm.ExecuteScalar());
         if (conectarServidor())
@@ -643,6 +643,121 @@ public int verificar_depa(string nombredepa,int sucur)
         }
         return cant;
     }
+        //sede empleado
+    [WebMethod]
+    public int id_empleado_sede(string ID_Empleado)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT ID_Sede FROM Empleado WHERE ID_Empleado='" + ID_Empleado + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+        //comision por sede
+    [WebMethod]
+    public int comision_sede(string sede)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT Comision FROM Sede WHERE ID_Sede='" + sede + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+    //peso por sede
+    [WebMethod]
+    public int peso_sede(string sede)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT cobroPeso FROM Sede WHERE ID_Sede='" + sede + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
 
     [WebMethod]
     public int id_administrador(string user,string password)
@@ -681,7 +796,50 @@ public int verificar_depa(string nombredepa,int sucur)
         }
         return cant;
     }
+
+    //sede empleado
     [WebMethod]
+    public int id_admin_sede(string ID_Empleado)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT sede FROM Administrador WHERE ID_Administrador='" + ID_Empleado + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
+        
+        
+        
+        [WebMethod]
     public int id_director(string user, string password)
     {
 
@@ -1081,6 +1239,54 @@ public int verificar_depa(string nombredepa,int sucur)
         return respuesta;
     }
 
+    //Update 
+    [WebMethod]
+    public bool despedir_empleado(string id)
+    {
+        bool respuesta = false;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "Update Empleado set Estado='Despedido' where ID_Empleado='" + id + "' ";
+            conectarServidor();
+
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+
+        return respuesta;
+    }
+
+
+
+
+
+
+
+
+
+
 
     //Prestamo cambio en Comision
     [WebMethod]
@@ -1121,47 +1327,347 @@ public int verificar_depa(string nombredepa,int sucur)
         return respuesta;
     }
 
-    ////Prestamo cambio en Comision
-    //[WebMethod]
-    //public bool(string valor,string tipo)
-    //{
-    //    bool respuesta = false;
-    //    try
-    //    {
-    //        SqlCommand cm = new SqlCommand();
-    //        cm.Connection = conexion;
-    //        cm.CommandText = "Update sesion Set usuario='" + valor + "' Set tipo='"+tipo+"'"+" Where ID_sesion='1' ";
-    //        conectarServidor();
+    //Seleccionar valor categoria
+    [WebMethod]
+    public int impuesto(string Nombre)
+    {
 
-    //        if (conectarServidor())
-    //        {
-    //            if (cm.ExecuteNonQuery() == 1)
-    //                respuesta = true;
-    //            else
-    //                respuesta = false;
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT ID_Impuesto FROM Impuesto WHERE Nombre='" + Nombre+"'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
 
-    //        }
-    //        else
-    //        {
-    //            respuesta = false;
-    //        }
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+    //Seleccionar valor categoria
+    [WebMethod]
+    public int idlote(string Nombre)
+    {
 
-    //    }
-    //    catch (Exception e)
-    //    {
-    //        respuesta = false;
-    //        MostrarError = "Erro: " + e.Message.ToString();
-    //    }
-    //    finally
-    //    {
-    //        conexion.Close();
-    //    }
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT ID_Lote FROM Lote WHERE fecha_salida='" + Nombre + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
 
-    //    return respuesta;
-    //}
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
+
+    [WebMethod]
+    public int empleado_sede(string Nombre)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "SELECT ID_Sede FROM Empleado WHERE ID_Empleado='" + Nombre + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
+    [WebMethod]
+    public bool FacturaImagen(string UsuarioC, string link,string  id)
+    {
+        bool respuesta = false;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "Update Paquete Set factura='" + link + "' Where usuario='" + UsuarioC +"'";
+            conectarServidor();
+
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+
+            }
+            else
+            {
+                respuesta = false;
+            }
+
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            //MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+
+        return respuesta;
+    }
+
+
+
+
+
+    [WebMethod]
+    public int cambiodeestadopaquete(string NombrePaquete)
+    {
+        
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "Update Paquete Set autorizafac='1'  where ID_Paquete='" + NombrePaquete + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
+
+    [WebMethod]
+    public int cambiodeestadopaquetecliente(string NombrePaquete)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "Update Paquete Set autorizafac='0'  where ID_Paquete='" + NombrePaquete + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
+    [WebMethod]
+    public int cambiodeestadopaquetedirec(string NombrePaquete)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "Update Paquete Set autorizafac='2'  where ID_Paquete='" + NombrePaquete + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
+
+
+
+    [WebMethod]
+    public int cambiodeestadopaquetedirecno(string NombrePaquete)
+    {
+
+        int cant = 0;
+        Boolean respuesta;
+        try
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.Connection = conexion;
+            cm.CommandText = "Update Paquete Set autorizafac='0' ValorFinal='0' Costo='0'   where ID_Paquete='" + NombrePaquete + "'";
+            conectarServidor();
+            cant = Convert.ToInt32(cm.ExecuteScalar());
+            if (conectarServidor())
+            {
+                if (cm.ExecuteNonQuery() == 1)
+                    respuesta = true;
+                else
+                    respuesta = false;
+            }
+            else
+            {
+                respuesta = false;
+            }
+        }
+        catch (Exception e)
+        {
+            respuesta = false;
+            MostrarError = "Erro: " + e.Message.ToString();
+        }
+        finally
+        {
+            conexion.Close();
+        }
+        return cant;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     
+
     
     
     }

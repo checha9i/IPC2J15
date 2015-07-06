@@ -57,6 +57,9 @@
                         <li><a runat="server" href="~/CargaCSV">Carga CSV</a></li>
                         <li><a runat="server" href="~/RegistroEmpleado2">Contratar Empleado</a></li>
                         <li><a runat="server" href="~/GestionCobro">Gestión de Cobros</a></li>
+                        
+                        <li><a runat="server" href="~/MenuReportes">Reportes</a></li>
+
                     </ul>
            
                               <ul class="nav navbar-nav navbar-right">

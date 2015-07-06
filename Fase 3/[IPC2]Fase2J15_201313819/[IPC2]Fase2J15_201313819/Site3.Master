@@ -59,7 +59,7 @@
                         <li><a runat="server" href="~/GestionEmpleados">Gestion de Empleados</a></li>
                         <li><a runat="server" href="~/RegistroEmpleado">Registrar Empleados</a></li>
                       <li><a runat="server" href="~/csvdirector">CSV de Empleados</a></li>
-                       
+                      <li><a runat="server" href="~/cargafactura">Autorizar Cambios</a></li>
                     </ul>
            
                               <ul class="nav navbar-nav navbar-right">
